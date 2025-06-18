@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="AllPlayersPaymentCard.h" />
     <ClInclude Include="Card.h" />
+    <ClInclude Include="CardDeck.h" />
     <ClInclude Include="GetOutOfJailCard.h" />
     <ClInclude Include="HeterogeneousContainer.hpp" />
     <ClInclude Include="MovePositionCard.h" />
@@ -139,10 +140,12 @@
     <ClInclude Include="PlayerColour.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="PropertyColour.h" />
+    <ClInclude Include="Queue.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AllPlayersPaymentCard.cpp" />
     <ClCompile Include="Card.cpp" />
+    <ClCompile Include="CardDeck.cpp" />
     <ClCompile Include="GetOutOfJailCard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovePositionCard.cpp" />
