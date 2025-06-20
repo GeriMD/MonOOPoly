@@ -1,5 +1,8 @@
 #include "Card.h"
+#include "Constants.h"
 #include <iostream>
+#include <fstream>
+#include <stdexcept>
 
 Card::Card()
 {
@@ -13,5 +16,9 @@ Card::Card(const MyString& description)
 
 void Card::printDescription() const
 {
-	std::cout << this->description;
+	std::cout << this->description << std::endl;
 }
+
+
+
+

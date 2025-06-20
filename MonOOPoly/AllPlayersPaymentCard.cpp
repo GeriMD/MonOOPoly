@@ -19,3 +19,14 @@ Card* AllPlayersPaymentCard::clone() const
 {
 	return new AllPlayersPaymentCard(*this);
 }
+
+void AllPlayersPaymentCard::readFromFile(std::ifstream& is)
+{
+	char buffer[1024];
+	
+	is.getline(buffer, 1024);
+
+	description = buffer;
+	is >> amount;
+	is.ignore();
+}

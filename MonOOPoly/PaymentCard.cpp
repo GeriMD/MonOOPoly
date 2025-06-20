@@ -14,3 +14,15 @@ Card* PaymentCard::clone() const
 {
     return new PaymentCard(*this);
 }
+
+void PaymentCard::readFromFile(std::ifstream& is)
+{
+	char buffer[1024];
+	
+	is.getline(buffer, 1024);
+
+	description = buffer;
+	is >> amount;
+    is.ignore();
+	
+}

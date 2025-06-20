@@ -12,5 +12,6 @@ public:
 
 	Card* clone() const override;
 	int getPositionCount() const;
+	virtual void readFromFile(std::ifstream& is) override;
 };
 

@@ -12,5 +12,6 @@ public:
 
 	int getAmount() const;
 	Card* clone() const override;
+	virtual void readFromFile(std::ifstream& is) override;
 };
 

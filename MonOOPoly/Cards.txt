@@ -1,0 +1,68 @@
+1
+Bank pays you dividend of 50 BGN!
+50
+1
+Pay poor tax of 15 BGN!
+-15
+2
+Happy Birthday – Collect 10 BGN from each player!
+10
+3
+Go to the Central railway station! If you pass START get 200 BGN!
+35
+4
+ Get out of jail! You can keep this card or sell it.
+2
+You have been elected Chairman – Pay each player 50 BGN!
+-50
+3
+Go to jail! If you pass START do NOT get 200 BGN!
+10
+2
+Opera night – Collect 50 BGN from each player for ticket sales!
+50
+1
+Your building and loan matures – Collect 150 BGN!
+150
+3
+Go 3 steps back!
+-3
+1
+Bank error in your favor – Collect 200 BGN!
+200
+1
+Hospital fees – Pay 100 BGN!
+-100
+1
+From sale of stock you get 50 BGN!
+50
+1
+Holiday Fund matures – Receive 100 BGN!
+100
+1
+Doctor’s fees – Pay 50 BGN!
+-50
+1
+Income tax refund – Collect 20 BGN!
+20
+1
+Receive 25 BGN consultancy fee!
+25
+3
+Go park for free! If you pass START get 200 BGN!
+20
+1
+You have won second prize in a beauty contest – Collect 10 BGN!
+10
+1
+School fees – Pay 50 BGN!
+-50
+3
+Go to the Vitosha Boulevard! If you pass START get 200 BGN!
+34
+
+
+
+
+
+
