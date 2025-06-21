@@ -1,6 +1,6 @@
 #include "PropertyField.h"
 
-PropertyField::PropertyField() : Field(1, "")
+PropertyField::PropertyField() : Field()
 {
 	name = "";
 	priceToBuy = 0;

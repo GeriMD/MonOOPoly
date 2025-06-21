@@ -69,6 +69,24 @@
     <ClInclude Include="StationField.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ServiceField.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ServiceType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeParkingField.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GoToJailField.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="JailField.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CardField.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -105,6 +123,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StationField.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ServiceField.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeParkingField.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GoToJailField.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JailField.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CardField.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

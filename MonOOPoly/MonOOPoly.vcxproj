@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -130,10 +130,14 @@
     <ClInclude Include="AllPlayersPaymentCard.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="CardDeck.h" />
+    <ClInclude Include="CardField.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="Field.h" />
+    <ClInclude Include="FreeParkingField.h" />
     <ClInclude Include="GetOutOfJailCard.h" />
+    <ClInclude Include="GoToJailField.h" />
     <ClInclude Include="HeterogeneousContainer.hpp" />
+    <ClInclude Include="JailField.h" />
     <ClInclude Include="MovePositionCard.h" />
     <ClInclude Include="MyString.h" />
     <ClInclude Include="MyVector.hpp" />
@@ -144,20 +148,27 @@
     <ClInclude Include="PropertyField.h" />
     <ClInclude Include="PropertyColour.h" />
     <ClInclude Include="Queue.hpp" />
+    <ClInclude Include="ServiceField.h" />
+    <ClInclude Include="ServiceType.h" />
     <ClInclude Include="StationField.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AllPlayersPaymentCard.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="CardDeck.cpp" />
+    <ClCompile Include="CardField.cpp" />
     <ClCompile Include="Field.cpp" />
+    <ClCompile Include="FreeParkingField.cpp" />
     <ClCompile Include="GetOutOfJailCard.cpp" />
+    <ClCompile Include="GoToJailField.cpp" />
+    <ClCompile Include="JailField.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovePositionCard.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="PaymentCard.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PropertyField.cpp" />
+    <ClCompile Include="ServiceField.cpp" />
     <ClCompile Include="StationField.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
