@@ -45,7 +45,7 @@
     <ClInclude Include="PropertyColour.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Property.h">
+    <ClInclude Include="PropertyField.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PlayerColour.h">
@@ -62,6 +62,12 @@
     </ClInclude>
     <ClInclude Include="PolymorphicPtr.hpp">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StationField.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -89,10 +95,16 @@
     <ClCompile Include="GetOutOfJailCard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Property.cpp">
+    <ClCompile Include="PropertyField.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CardDeck.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Field.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StationField.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -8,7 +8,7 @@ private:
 
 public:
 	MovePositionCard();
-	MovePositionCard(int positionsCount);
+	MovePositionCard(int positionsCount, const MyString& description);
 
 	Card* clone() const override;
 	int getPositionCount() const;

@@ -8,7 +8,7 @@ private:
 
 public:
 	AllPlayersPaymentCard();
-	AllPlayersPaymentCard(int amount);
+	AllPlayersPaymentCard(int amount, const MyString& description);
 
 	int getAmount() const;
 	Card* clone() const override;

@@ -1,11 +1,11 @@
 #include "AllPlayersPaymentCard.h"
 
-AllPlayersPaymentCard::AllPlayersPaymentCard() 
+AllPlayersPaymentCard::AllPlayersPaymentCard() : Card()
 {
 	amount = 0; //TODO: Make a constant
 }
 
-AllPlayersPaymentCard::AllPlayersPaymentCard(int amount) 
+AllPlayersPaymentCard::AllPlayersPaymentCard(int amount, const MyString& description) : Card(description)
 {
 	this->amount = amount;
 }

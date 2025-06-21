@@ -1,5 +1,13 @@
 #include "GetOutOfJailCard.h"
 
+GetOutOfJailCard::GetOutOfJailCard() : Card()
+{
+}
+
+GetOutOfJailCard::GetOutOfJailCard(const MyString& description) : Card(description)
+{
+}
+
 Card* GetOutOfJailCard::clone() const
 {
     return new GetOutOfJailCard(*this);

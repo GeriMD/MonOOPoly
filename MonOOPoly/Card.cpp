@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <stdexcept>
+#include "Field.h"
 
 Card::Card()
 {
@@ -13,6 +14,7 @@ Card::Card(const MyString& description)
 {
 	this->description = description;
 }
+
 
 void Card::printDescription() const
 {

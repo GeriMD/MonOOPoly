@@ -7,11 +7,11 @@ class Player
 {
 private:
 	MyString name;
-	PlayerColour colour;
+	PlayerColour colour = PlayerColour::DEFAULT;
 
-	int playerIndex;
-	int currentPlayerPositionIndex;
-	int playersMoney;
+	int playerIndex = 0;
+	int currentPlayerPositionIndex = 0;
+	int playersMoney = 0;
 	bool hasGetOutOfJailCard = false;
 
 	bool skipTurn = false;

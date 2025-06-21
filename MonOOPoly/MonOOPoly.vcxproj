@@ -131,6 +131,7 @@
     <ClInclude Include="Card.h" />
     <ClInclude Include="CardDeck.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="Field.h" />
     <ClInclude Include="GetOutOfJailCard.h" />
     <ClInclude Include="HeterogeneousContainer.hpp" />
     <ClInclude Include="MovePositionCard.h" />
@@ -140,21 +141,24 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerColour.h" />
     <ClInclude Include="PolymorphicPtr.hpp" />
-    <ClInclude Include="Property.h" />
+    <ClInclude Include="PropertyField.h" />
     <ClInclude Include="PropertyColour.h" />
     <ClInclude Include="Queue.hpp" />
+    <ClInclude Include="StationField.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AllPlayersPaymentCard.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="CardDeck.cpp" />
+    <ClCompile Include="Field.cpp" />
     <ClCompile Include="GetOutOfJailCard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovePositionCard.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="PaymentCard.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Property.cpp" />
+    <ClCompile Include="PropertyField.cpp" />
+    <ClCompile Include="StationField.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

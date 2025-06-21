@@ -1,11 +1,11 @@
 #include "PaymentCard.h"
 
-PaymentCard::PaymentCard() 
+PaymentCard::PaymentCard() : Card()
 {
     amount = 0;
 }
 
-PaymentCard::PaymentCard(int amount) 
+PaymentCard::PaymentCard(int amount, const MyString& description) : Card(description)
 {
     this->amount = amount;
 }
