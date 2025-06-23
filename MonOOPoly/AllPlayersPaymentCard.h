@@ -1,10 +1,11 @@
 #pragma once
 #include "Card.h"
-
+#include "Monopoly.h"
 class AllPlayersPaymentCard : public Card
 {
 private:
 	int amount;
+	Monopoly& monopoly = Monopoly::getInstance();
 
 public:
 	AllPlayersPaymentCard();

@@ -1,29 +1,35 @@
 #include "Monopoly.h"
 
 
-int Monopoly::getCurrPlayerIndex() const
-{
-    return currentPlayerIndex;
+Monopoly& Monopoly::getInstance() {
+	static Monopoly instance;
+	return instance;
 }
 
-bool Monopoly::isGameOver() const
+Player* Monopoly::getPlayer(int index) 
 {
-    return gameOver;
-}
-
-Player& Monopoly::getPlayer(int index)
-{
-    return players[index];
+	//TODO: invalid index handle
+	return players[index];
 }
 
 int Monopoly::getPlayersCount() const
 {
-    return players.size();
+	return players.getSize();
+}
+
+int Monopoly::getCurrentPlayerIndex() const
+{
+	return currentPlayerIndex;
 }
 
 void Monopoly::addPlayer(const Player& player)
 {
-    players.push_back(player);
+	players.addObject(player);
+}
+
+void Monopoly::playTurn(int index)
+{
+	//TODO: 
 }
 
 

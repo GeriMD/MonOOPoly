@@ -68,3 +68,8 @@ void Player::printPlayerInfo() const
 {
     std::cout << "Name: " << name << " Money: " << playersMoney << " Position: " << currentPlayerPositionIndex << " Has OOJ card: " << hasGetOutOfJailCard << " Is in jail: " << isInJail << " Skip turn: " << skipTurn << std::endl;
 }
+
+void Player::setHasGetOOJCard()
+{
+    hasGetOutOfJailCard = true;
+}

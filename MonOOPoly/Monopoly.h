@@ -2,7 +2,7 @@
 #include "MyVector.hpp"
 #include "Player.h"
 #include "Board.h"
-#include "MyVector.hpp"
+#include "HeterogeneousContainer.hpp"
 #include "Player.h"
 class Monopoly
 {
@@ -10,16 +10,20 @@ private:
 	bool gameOver = false;
 	int currentPlayerIndex = 0;
 
-	MyVector<Player> players;
+	HeterogeneousContainer<Player> players;
 	Board& board = Board::getInstance();
 	
+	Monopoly();
 public:
-	Monopoly() = default;
-	//Monopoly(const PlayersContainer& players);
-	int getCurrPlayerIndex() const;
-	bool isGameOver() const;
-	Player& getPlayer(int index);//TODO: !!!
+	Monopoly(const Monopoly& other) = delete;
+	Monopoly& operator=(const Monopoly& other) = delete;
+	
+	static Monopoly& getInstance();
+
+	Player* getPlayer(int index);
 	int getPlayersCount() const;
+	int getCurrentPlayerIndex() const;
 	void addPlayer(const Player& player);
+	void playTurn(int index);
 };
 

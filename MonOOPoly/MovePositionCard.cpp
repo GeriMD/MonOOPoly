@@ -1,5 +1,5 @@
 #include "MovePositionCard.h"
-
+#include "Board.h"
 MovePositionCard::MovePositionCard() : Card()
 {
     positionsCount = 1;
@@ -50,4 +50,8 @@ bool MovePositionCard::isGetOutOfJail()
 
 void MovePositionCard::applyCard(Player& player)
 {
+	player.setCurrentPosition(positionsCount);
+	Board& board = Board::getInstance();
+
+	board.getField(positionsCount)->applyEffect(player);
 }

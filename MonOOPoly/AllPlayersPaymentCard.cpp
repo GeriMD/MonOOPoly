@@ -50,22 +50,23 @@ bool AllPlayersPaymentCard::isGetOutOfJail()
 
 void AllPlayersPaymentCard::applyCard(Player& player)
 {
-	Monopoly monopoly;
-
 	for (int i = 0; i < monopoly.getPlayersCount(); i++)
 	{
-		if (monopoly.getPlayer(i).getPlayersIndex() != player.getPlayersIndex()) {
+		if (player.getPlayersIndex() != monopoly.getPlayer(i)->getPlayersIndex())
+		{
 			if (amount < 0)
 			{
-				player.setPlayerMoney(player.getPlayersMoney() - monopoly.getPlayersCount() * amount * (-1));
-				Player current = monopoly.getPlayer(i);
-				current.setPlayerMoney(current.getPlayersMoney() + amount * (-1));
+				if (player.getPlayersMoney() < amount * (-1))
+				{
+					//TODO:
+				}
+				player.setPlayerMoney(player.getPlayersMoney() - amount * (-1));
+				monopoly.getPlayer(i)->setPlayerMoney(monopoly.getPlayer(i)->getPlayersMoney() + amount * (-1));
 			}
 			else {
-				player.setPlayerMoney(player.getPlayersMoney() + monopoly.
-					getPlayersCount() * amount);
-				Player current = monopoly.getPlayer(i);
-				current.setPlayerMoney(current.getPlayersMoney() - amount);
+				player.setPlayerMoney(player.getPlayersMoney() + amount);
+				monopoly.getPlayer(i)->setPlayerMoney(monopoly.getPlayer(i)->getPlayersMoney() + amount);
 			}
 		}
+	}
 }

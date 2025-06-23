@@ -34,6 +34,7 @@ public:
 	void setPlayerName(const MyString& name);
 	void addStation();
 	void printPlayerInfo() const;
+	void setHasGetOOJCard();
 	//TODO: add more functions
 
 };
