@@ -2,7 +2,7 @@
 
 Field::Field()
 {
-	index = 0;
+	index = -1;
 	description = "";
 }
 
@@ -13,7 +13,7 @@ Field::Field(int index, const MyString& description)
 }
 
 void Field::printDescription() const {
-	std::cout << this->description;
+	std::cout << this->description << std::endl;
 }
 
 int Field::getFieldIndex() const

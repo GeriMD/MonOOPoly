@@ -6,8 +6,8 @@
 class PropertyField : public Field
 {
 private:
-	PropertyColour colour = PropertyColour::DEFAULT;
-	MyString name = nullptr;
+	PropertyColour colour = PropertyColour::DEFAULT_COLOR;
+	MyString name;
 	unsigned priceToBuy = 0;
 	unsigned rent;
 	unsigned cottagePrice;
@@ -19,5 +19,7 @@ public:
 
 	virtual Field* clone() const override;
 	virtual void readFromFile(std::ifstream& is) override;
+	virtual void printFieldInformation() const override;
+
 };
 

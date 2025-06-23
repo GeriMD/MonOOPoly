@@ -1,15 +1,14 @@
 #pragma once
 #include "Field.h"
-#include "ServiceType.h"
 
-class ServiceField : public Field
+class TaxField : public Field
 {
 private:
-	ServiceType type;
-	// TODO: add player*
+	int amount;
+
 public:
-	ServiceField();
-	ServiceField(ServiceType& type, int index, const MyString& description);
+	TaxField();
+	TaxField(int amount, int index, const MyString& description);
 
 	virtual Field* clone() const override;
 	virtual void readFromFile(std::ifstream& is) override;

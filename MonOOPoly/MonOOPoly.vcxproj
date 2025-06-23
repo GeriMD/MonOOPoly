@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AllPlayersPaymentCard.h" />
+    <ClInclude Include="Board.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="CardDeck.h" />
     <ClInclude Include="CardField.h" />
@@ -150,10 +151,13 @@
     <ClInclude Include="Queue.hpp" />
     <ClInclude Include="ServiceField.h" />
     <ClInclude Include="ServiceType.h" />
+    <ClInclude Include="StartField.h" />
     <ClInclude Include="StationField.h" />
+    <ClInclude Include="TaxField.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AllPlayersPaymentCard.cpp" />
+    <ClCompile Include="Board.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="CardDeck.cpp" />
     <ClCompile Include="CardField.cpp" />
@@ -169,7 +173,9 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PropertyField.cpp" />
     <ClCompile Include="ServiceField.cpp" />
+    <ClCompile Include="StartField.cpp" />
     <ClCompile Include="StationField.cpp" />
+    <ClCompile Include="TaxField.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

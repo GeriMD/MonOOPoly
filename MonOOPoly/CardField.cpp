@@ -15,6 +15,17 @@ Field* CardField::clone() const
 
 void CardField::readFromFile(std::ifstream& is)
 {
-	//TODO:
+    char buffer[1024];
+    is.getline(buffer, 1024);
+    description = buffer;
+
+    is >> index;
+    is.ignore();
+}
+
+void CardField::printFieldInformation() const
+{
+    std::cout << description << std::endl;
+    std::cout << index << std::endl; 
 }
 

@@ -30,3 +30,20 @@ void AllPlayersPaymentCard::readFromFile(std::ifstream& is)
 	is >> amount;
 	is.ignore();
 }
+
+void AllPlayersPaymentCard::printCardInformation() const
+{
+	std::cout << description << std::endl;
+	if (amount > 0)
+	{
+		std::cout << "You should receive " << amount << " BGN from each person." << std::endl;
+	}
+	else {
+		std::cout << "You should give " << amount * (-1) << " BGN to each person." << std::endl;
+	}
+}
+
+bool AllPlayersPaymentCard::isGetOutOfJail()
+{
+	return false;
+}

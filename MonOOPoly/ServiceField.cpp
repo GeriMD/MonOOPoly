@@ -17,5 +17,41 @@ Field* ServiceField::clone() const
 
 void ServiceField::readFromFile(std::ifstream& is)
 {
-	// TODO:
+	char buffer[1024];
+	is.getline(buffer, 1024);
+	description = buffer;
+
+	is >> index;
+	is.ignore();
+	int serviceType;
+	is >> serviceType;
+	switch (serviceType)
+	{
+	case 1: 
+	{ 
+		type = ServiceType::WATER_SERVICE; 
+		break; 
+	}
+	case 2: { type = ServiceType::ELECTRICITY_SERVICE; break; }
+	default:
+		throw std::invalid_argument("Invalid service type!");
+	}
+	is.ignore();
+}
+
+void ServiceField::printFieldInformation() const
+{
+	std::cout << description << std::endl;
+	std::cout << index << std::endl;
+	if (type == ServiceType::ELECTRICITY_SERVICE)
+	{
+		std::cout << "Type: Electricity service" << std::endl;
+	}
+	else if(type == ServiceType::WATER_SERVICE)
+	{
+		std::cout << "Type: Water service" << std::endl;
+	}
+	else {
+		std::cout << "NO TYPE!!!" << std::endl;
+	}
 }

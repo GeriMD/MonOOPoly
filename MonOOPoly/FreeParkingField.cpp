@@ -14,5 +14,16 @@ Field* FreeParkingField::clone() const
 
 void FreeParkingField::readFromFile(std::ifstream& is)
 {
-    //TODO:
+    char buffer[1024];
+    is.getline(buffer, 1024);
+    description = buffer;
+
+    is >> index;
+    is.ignore();
+}
+
+void FreeParkingField::printFieldInformation() const
+{
+    std::cout << description << std::endl;
+    std::cout << index << std::endl;
 }

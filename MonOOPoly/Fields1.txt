@@ -1,0 +1,260 @@
+1
+You are on start! 
+0
+2
+You are on the free parking field.
+20
+3
+Oops! You broke the law! You need to go to the jail!
+30
+4
+You are in jail!
+10
+6
+You are on first service field. If it is not owned you can buy it for 150 BGN. If it is owned you should roll the dice again and pay the owner 5 times the amount you roll.
+12
+2
+6
+You are on second service field. If it is not owned you can buy it for 150 BGN. If it is owned you should roll the dice again and pay the owner 5 times the amount you roll.
+28
+1
+7
+You are on a Zaharna Fabrika station. If it is not owned you can buy it for 200 BGN. If it has owner you should pay him 50 BGN for each station he owns.
+5
+Zaharna Fabrika station
+7
+You are on a Poduyane station. If it is not owned you can buy it for 200 BGN. If it has owner you should pay him 50 BGN for each station he owns.
+15
+Poduyane station
+7
+You are on a Gorna Banya station. If it is not owned you can buy it for 200 BGN. If it has owner you should pay him 50 BGN for each station he owns.
+25
+Gorna Banya station
+7
+You are on a Central railway station. If it is not owned you can buy it for 200 BGN. If it has owner you should pay him 50 BGN for each station he owns.
+35
+Central railway station
+8
+You are on card field. You shoud draw a card from the card deck and follow the instructions on it.
+2
+8
+You are on card field. You shoud draw a card from the card deck and follow the instructions on it.
+7
+8
+You are on card field. You shoud draw a card from the card deck and follow the instructions on it.
+17
+8
+You are on card field. You shoud draw a card from the card deck and follow the instructions on it.
+22
+8
+You are on card field. You shoud draw a card from the card deck and follow the instructions on it.
+33
+8
+You are on card field. You shoud draw a card from the card deck and follow the instructions on it.
+36
+5
+You should pay taxes. Pay 200 BGN.
+4
+200
+5
+You should pay taxes. Pay 100 BGN.
+38
+100
+9
+You are on Slivnitsa. If it is not owned you can buy it for 60 BGN. If it has owner you should pay him rent!
+1
+1
+Slivnitsa
+60
+6
+100
+120
+9
+You are on gen. Totleben. If it is not owned you can buy it for 60 BGN. If it has owner you should pay him rent!
+3
+1
+gen. Totleben
+60
+6
+100
+120
+9
+You are on Tsar Osvoboditel. If it is not owned you can buy it for 100 BGN. If it has owner you should pay him rent!
+6
+2
+Tsar Osvoboditel
+100
+10
+100
+150
+9
+You are on Knyaginya Mariya Louiza. If it is not owned you can buy it for 100 BGN. If it has owner you should pay him rent!
+8
+2
+Knyaginya Mariya Louiza
+100
+10
+100
+150
+9
+You are on gen. Skobelev. If it is not owned you can buy it for 120 BGN. If it has owner you should pay him rent!
+9
+2
+gen. Skobelev
+120
+12
+100
+170
+9
+You are on Alabin. If it is not owned you can buy it for 140 BGN. If it has owner you should pay him rent!
+11
+3
+Alabin
+140
+14
+120
+180
+9
+You are on Exarch Joseph. If it is not owned you can buy it for 140 BGN. If it has owner you should pay him rent!
+13
+3
+Exarch Joseph
+140
+14
+120
+180
+9
+You are on Opalchenska street. If it is not owned you can buy it for 160 BGN. If it has owner you should pay him rent!
+14
+3
+Opalchenska street
+160
+16
+140
+200
+9
+You are on Pirotska street. If it is not owned you can buy it for 180 BGN. If it has owner you should pay him rent!
+16
+4
+Pirotska street
+180
+18
+150
+200
+9
+You are on Alexander Stamboliiski. If it is not owned you can buy it for 180 BGN. If it has owner you should pay him rent!
+18
+4
+Alexander Stamboliiski
+180
+18
+150
+200
+9
+You are on Neofit Rilski. If it is not owned you can buy it for 200 BGN. If it has owner you should pay him rent!
+19
+4
+Neofit Rilski
+200
+20
+170
+210
+9
+You are on Solunska Street. If it is not owned you can buy it for 220 BGN. If it has owner you should pay him rent!
+21
+5
+Solunska Street
+220
+22
+180
+210
+9
+You are on Pette Kyosheta. If it is not owned you can buy it for 220 BGN. If it has owner you should pay him rent!
+23
+5
+Pette Kyosheta
+220
+22
+180
+210
+9
+You are on Georgi S. Rakovski. If it is not owned you can buy it for 240 BGN. If it has owner you should pay him rent!
+24
+5
+Georgi S. Rakovski
+240
+24
+190
+220
+9
+You are on gen. Skobelev. If it is not owned you can buy it for 260 BGN. If it has owner you should pay him rent!
+26
+6
+gen. Skobelev
+260
+26
+200
+230
+9
+You are on Graf Ignatiev. If it is not owned you can buy it for 260 BGN. If it has owner you should pay him rent!
+27
+6
+Graf Ignatiev
+260
+26
+200
+230
+9
+You are on St. Nedelya square. If it is not owned you can buy it for 280 BGN. If it has owner you should pay him rent!
+29
+6
+St. Nedelya square
+280
+28
+200
+240
+9
+You are on Lions Bridge. If it is not owned you can buy it for 300 BGN. If it has owner you should pay him rent!
+31
+7
+Lions Bridge
+300
+30
+200
+250
+9
+You are on Eagles Bridge. If it is not owned you can buy it for 300 BGN. If it has owner you should pay him rent!
+32
+7
+Eagles Bridge
+300
+30
+200
+250
+9
+You are on Vitosha Boulevard. If it is not owned you can buy it for 320 BGN. If it has owner you should pay him rent!
+34
+7
+Vitosha Boulevard
+320
+32
+210
+260
+9
+You are on Patriarch Evtimii square. If it is not owned you can buy it for 350 BGN. If it has owner you should pay him rent!
+37
+8
+Patriarch Evtimii square
+350
+35
+230
+270
+9
+You are on Narodno sybranie square. If it is not owned you can buy it for 400 BGN. If it has owner you should pay him rent!
+39
+8
+Narodno sybranie square
+400
+40
+250
+300

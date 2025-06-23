@@ -17,5 +17,22 @@ Field* StationField::clone() const
 
 void StationField::readFromFile(std::ifstream& is)
 {
-    // TODO:
+    char buffer[1024];
+    is.getline(buffer, 1024);
+    description = buffer;
+
+    is >> index;
+    is.ignore();
+
+    char buffer2[1024];
+    is.getline(buffer2, 1024);
+    name = buffer2;
+}
+
+void StationField::printFieldInformation() const
+{
+    std::cout << description << std::endl;
+    std::cout << index << std::endl;
+    std::cout << name << std::endl;
+
 }

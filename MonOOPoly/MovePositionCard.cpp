@@ -30,3 +30,20 @@ void MovePositionCard::readFromFile(std::ifstream& is)
 	is >> positionsCount;
 is.ignore();
 }
+
+void MovePositionCard::printCardInformation() const
+{
+	std::cout << description << std::endl;
+	if (positionsCount > 0)
+	{
+		std::cout << "You have to go to: " << positionsCount << std::endl;
+	}
+	else {
+		std::cout << "You have to go " << positionsCount * (-1) << " positions backwords." << std::endl;
+	}
+}
+
+bool MovePositionCard::isGetOutOfJail()
+{
+	return false;
+}

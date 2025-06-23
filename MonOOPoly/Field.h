@@ -18,5 +18,6 @@ public:
 	int getFieldIndex() const;
 	virtual Field* clone() const = 0;
 	virtual void readFromFile(std::ifstream& is) = 0;
+	virtual void printFieldInformation() const = 0;
 };
 

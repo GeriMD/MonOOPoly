@@ -15,5 +15,16 @@ Field* JailField::clone() const
 
 void JailField::readFromFile(std::ifstream& is)
 {
-    //TODO:
+    char buffer[1024];
+    is.getline(buffer, 1024);
+    description = buffer;
+
+    is >> index;
+    is.ignore();
+}
+
+void JailField::printFieldInformation() const
+{
+    std::cout << description << std::endl;
+    std::cout << index << std::endl;
 }

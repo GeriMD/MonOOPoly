@@ -7,6 +7,7 @@
 #include "PaymentCard.h"
 #include "MovePositionCard.h"
 #include "GetOutOfJailCard.h"
+#include "Board.h"
 
 CardDeck::CardDeck()
 {
@@ -58,10 +59,17 @@ PolymorphicPtr<Card> CardDeck::drawCard()
     PolymorphicPtr<Card> currentCard = deck.peek();
     deck.pop();
 
-    deck.push(currentCard);
+    if (!currentCard.get()->isGetOutOfJail())
+    {
+        //TODO: Add logic!
+        // only for the test:
+deck.push(currentCard);
+    }
+    
 
     return currentCard;
 }
+
 
 CardDeck& CardDeck::getInstance()
 {

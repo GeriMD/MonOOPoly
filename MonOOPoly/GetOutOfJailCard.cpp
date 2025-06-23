@@ -23,3 +23,13 @@ void GetOutOfJailCard::readFromFile(std::ifstream& is)
 	
 
 }
+
+void GetOutOfJailCard::printCardInformation() const
+{
+	std::cout << description << std::endl;
+}
+
+bool GetOutOfJailCard::isGetOutOfJail()
+{
+	return true;
+}

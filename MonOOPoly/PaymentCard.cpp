@@ -26,3 +26,20 @@ void PaymentCard::readFromFile(std::ifstream& is)
     is.ignore();
 	
 }
+
+void PaymentCard::printCardInformation() const
+{
+	std::cout << description << std::endl;
+	if (amount > 0)
+	{
+		std::cout << "You have to receive " << amount << " BGN from the Bank." << std::endl;
+	}
+	else {
+		std::cout << "You have to pay " << amount * (-1) << " BGN to the Bank." << std::endl;
+	}
+}
+
+bool PaymentCard::isGetOutOfJail()
+{
+	return false;
+}

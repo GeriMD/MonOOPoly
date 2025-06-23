@@ -9,5 +9,7 @@ public:
 
 	virtual Field* clone() const override;
 	virtual void readFromFile(std::ifstream& is) override;
+
+	virtual void printFieldInformation() const override;
 };
 
