@@ -129,10 +129,18 @@
   <ItemGroup>
     <ClInclude Include="AllPlayersPaymentCard.h" />
     <ClInclude Include="Board.h" />
+    <ClInclude Include="BuyCastleCommand.h" />
+    <ClInclude Include="BuyCottageCommand.h" />
+    <ClInclude Include="BuyPropertyCommand.h" />
+    <ClInclude Include="BuyPropertyFromTheBankBackCommand.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="CardDeck.h" />
     <ClInclude Include="CardField.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="CommandFactory.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="DrawCardCommand.h" />
+    <ClInclude Include="ExitGameCommand.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="FreeParkingField.h" />
     <ClInclude Include="GetOutOfJailCard.h" />
@@ -149,18 +157,32 @@
     <ClInclude Include="PropertyField.h" />
     <ClInclude Include="PropertyColour.h" />
     <ClInclude Include="Queue.hpp" />
+    <ClInclude Include="ResumeOldGameCommand.h" />
+    <ClInclude Include="RollDiceCommand.h" />
+    <ClInclude Include="SaveGameCommand.h" />
+    <ClInclude Include="SellPropertyCommand.h" />
+    <ClInclude Include="SellPropertyToTheBankCommand.h" />
     <ClInclude Include="ServiceField.h" />
     <ClInclude Include="ServiceType.h" />
     <ClInclude Include="StartField.h" />
+    <ClInclude Include="StartNewGameCommand.h" />
     <ClInclude Include="StationField.h" />
     <ClInclude Include="TaxField.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AllPlayersPaymentCard.cpp" />
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="BuyCastleCommand.cpp" />
+    <ClCompile Include="BuyCottageCommand.cpp" />
+    <ClCompile Include="BuyPropertyCommand.cpp" />
+    <ClCompile Include="BuyPropertyFromTheBankBackCommand.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="CardDeck.cpp" />
     <ClCompile Include="CardField.cpp" />
+    <ClCompile Include="Command.cpp" />
+    <ClCompile Include="CommandFactory.cpp" />
+    <ClCompile Include="DrawCardCommand.cpp" />
+    <ClCompile Include="ExitGameCommand.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="FreeParkingField.cpp" />
     <ClCompile Include="GetOutOfJailCard.cpp" />
@@ -172,8 +194,14 @@
     <ClCompile Include="PaymentCard.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PropertyField.cpp" />
+    <ClCompile Include="ResumeOldGameCommand.cpp" />
+    <ClCompile Include="RollDiceCommand.cpp" />
+    <ClCompile Include="SaveGameCommand.cpp" />
+    <ClCompile Include="SellPropertyCommand.cpp" />
+    <ClCompile Include="SellPropertyToTheBankCommand.cpp" />
     <ClCompile Include="ServiceField.cpp" />
     <ClCompile Include="StartField.cpp" />
+    <ClCompile Include="StartNewGameCommand.cpp" />
     <ClCompile Include="StationField.cpp" />
     <ClCompile Include="TaxField.cpp" />
   </ItemGroup>
