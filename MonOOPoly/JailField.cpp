@@ -28,3 +28,7 @@ void JailField::printFieldInformation() const
     std::cout << description << std::endl;
     std::cout << index << std::endl;
 }
+
+void JailField::applyEffect(Player& player)
+{
+}

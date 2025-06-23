@@ -29,3 +29,7 @@ void StartField::printFieldInformation() const
     std::cout << index << std::endl;
 
 }
+
+void StartField::applyEffect(Player& player)
+{
+}

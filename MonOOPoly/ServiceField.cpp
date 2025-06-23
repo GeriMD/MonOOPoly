@@ -1,4 +1,5 @@
 #include "ServiceField.h"
+#include "CommandFactory.h"
 
 ServiceField::ServiceField() : Field()
 {
@@ -53,5 +54,35 @@ void ServiceField::printFieldInformation() const
 	}
 	else {
 		std::cout << "NO TYPE!!!" << std::endl;
+	}
+}
+void ServiceField::setOwner(Player* owner)
+{
+	this->owner = owner;
+}
+
+void ServiceField::applyEffect(Player& player)
+{
+	CommandFactory& factory = CommandFactory::getInstance();
+	if (owner == nullptr)
+	{
+		std::cout << "This service does not have an owner. Do you want to buy it? Please enter buy_property/cancel." << std::endl;
+		std::cout << "Answer: ";
+
+		MyString answer;
+		std::cin >> answer;
+
+		factory.readCommand(answer)->executeCommand();
+	}
+	else {
+		std::cout << "This service has an owner. You must roll the dice again. Please enter roll." << std::endl;
+		MyString answer;
+		std::cin >> answer;
+
+		factory.readCommand(answer)->executeCommand();
+		
+		int diceSum; // TODO: GET FROM THE COMMAND
+		player.setPlayerMoney(player.getPlayersMoney() - diceSum * 5);
+		this->owner->setPlayerMoney(this->owner->getPlayersMoney() + diceSum * 5);
 	}
 }

@@ -27,3 +27,8 @@ void FreeParkingField::printFieldInformation() const
     std::cout << description << std::endl;
     std::cout << index << std::endl;
 }
+
+void FreeParkingField::applyEffect(Player& player)
+{
+    printDescription();
+}

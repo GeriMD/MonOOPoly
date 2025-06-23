@@ -139,7 +139,6 @@
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommandFactory.h" />
     <ClInclude Include="Constants.h" />
-    <ClInclude Include="DrawCardCommand.h" />
     <ClInclude Include="ExitGameCommand.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="FreeParkingField.h" />
@@ -147,6 +146,7 @@
     <ClInclude Include="GoToJailField.h" />
     <ClInclude Include="HeterogeneousContainer.hpp" />
     <ClInclude Include="JailField.h" />
+    <ClInclude Include="Monopoly.h" />
     <ClInclude Include="MovePositionCard.h" />
     <ClInclude Include="MyString.h" />
     <ClInclude Include="MyVector.hpp" />
@@ -181,7 +181,6 @@
     <ClCompile Include="CardField.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="CommandFactory.cpp" />
-    <ClCompile Include="DrawCardCommand.cpp" />
     <ClCompile Include="ExitGameCommand.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="FreeParkingField.cpp" />
@@ -189,6 +188,7 @@
     <ClCompile Include="GoToJailField.cpp" />
     <ClCompile Include="JailField.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Monopoly.cpp" />
     <ClCompile Include="MovePositionCard.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="PaymentCard.cpp" />

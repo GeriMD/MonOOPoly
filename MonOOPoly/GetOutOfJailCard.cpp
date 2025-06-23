@@ -33,3 +33,7 @@ bool GetOutOfJailCard::isGetOutOfJail()
 {
 	return true;
 }
+
+void GetOutOfJailCard::applyCard(Player& player)
+{
+}

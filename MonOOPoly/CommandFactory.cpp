@@ -6,10 +6,6 @@ Command* CommandFactory::readCommand(const MyString& command) const
 	{
 		return new BuyPropertyCommand();
 	}
-	else if (command == "draw_card")
-	{
-		return new DrawCardCommand();
-	}
 	else if (command == "exit")
 	{
 		return new ExitGameCommand();

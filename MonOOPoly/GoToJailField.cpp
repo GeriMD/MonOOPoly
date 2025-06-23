@@ -28,3 +28,11 @@ void GoToJailField::printFieldInformation() const
     std::cout << description << std::endl;
     std::cout << index << std::endl;
 }
+
+void GoToJailField::applyEffect(Player& player)
+{
+    printDescription();
+
+    player.setCurrentPosition(10);
+   // player.sendToJail();
+}

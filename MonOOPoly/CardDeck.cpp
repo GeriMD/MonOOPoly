@@ -57,6 +57,7 @@ PolymorphicPtr<Card> CardDeck::drawCard()
 
     }
     PolymorphicPtr<Card> currentCard = deck.peek();
+    
     deck.pop();
 
     if (!currentCard.get()->isGetOutOfJail())

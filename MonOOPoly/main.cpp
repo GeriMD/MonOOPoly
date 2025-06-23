@@ -7,15 +7,21 @@ int main()
 {
     std::cout << "Program started." << std::endl;
 
-    CardDeck& deck = CardDeck::getInstance();
+	Player player;
+	player.setPlayerMoney(1500);
+	player.setCurrentPosition(0);
+	player.setPlayerName("Ivan");
 
-    std::cout << "Card deck initialized." << std::endl;
+	Player stationOwner;
+	stationOwner.setPlayerMoney(100);
+	stationOwner.setPlayerName("Pesho");
+	stationOwner.addStation();
 
-    for (int i = 0; i < 27; i++)
-    {
-        std::cout << i << " ";
-        deck.drawCard().get()->printCardInformation();
-    }
+	Board& board = Board::getInstance();
+	
+	board.getField(5)->applyEffect(player);
+	player.printPlayerInfo();
+	stationOwner.printPlayerInfo();
 	return 0;
 
 }

@@ -6,13 +6,15 @@ class ServiceField : public Field
 {
 private:
 	ServiceType type;
-	// TODO: add player*
+	Player* owner;
 public:
 	ServiceField();
 	ServiceField(ServiceType& type, int index, const MyString& description);
 
+	void setOwner(Player* owner);
 	virtual Field* clone() const override;
 	virtual void readFromFile(std::ifstream& is) override;
 	virtual void printFieldInformation() const override;
+	virtual void applyEffect(Player& player) override;
 };
 

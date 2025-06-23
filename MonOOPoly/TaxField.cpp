@@ -34,3 +34,10 @@ void TaxField::printFieldInformation() const
     std::cout << index << std::endl;
     std::cout << amount << std::endl;
 }
+
+void TaxField::applyEffect(Player& player)
+{
+    int playersMoney = player.getPlayersMoney();
+
+    player.setPlayerMoney(playersMoney - amount);
+}

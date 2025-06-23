@@ -1,5 +1,6 @@
 #pragma once
 #include "MyString.h"
+#include "Player.h"
 #include <iostream>
 #include <fstream>
 
@@ -19,5 +20,6 @@ public:
 	virtual Field* clone() const = 0;
 	virtual void readFromFile(std::ifstream& is) = 0;
 	virtual void printFieldInformation() const = 0;
+	virtual void applyEffect(Player& player) = 0;
 };
 

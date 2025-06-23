@@ -1,4 +1,5 @@
 #include "PropertyField.h"
+#include "CommandFactory.h"
 
 PropertyField::PropertyField() : Field()
 {
@@ -123,6 +124,30 @@ void PropertyField::printFieldInformation() const
 	std::cout << "Rent for: " << rent << std::endl;
 	std::cout << "Buy cottage for: " << cottagePrice << std::endl;
 	std::cout << "Buy castle for: " << castlePrice << std::endl;
+}
+void PropertyField::setOwner(Player* owner) {
+	this->owner = owner;
+}
+
+void PropertyField::applyEffect(Player& player)
+{
+	CommandFactory& factory = CommandFactory::getInstance();
+	if (owner == nullptr)
+	{
+		std::cout << "This property does not have an owner. Do you want to buy it? Please enter buy_property/cancel." << std::endl;
+		std::cout << "Answer: ";
+
+		MyString answer;
+		std::cin >> answer;
+
+		factory.readCommand(answer)->executeCommand();
+	}
+	else {
+		std::cout << "This property has an owner. You must pay him rent." << std::endl;
+		
+		player.setPlayerMoney(player.getPlayersMoney() - rent);
+		this->owner->setPlayerMoney(this->owner->getPlayersMoney() + rent);
+	}
 }
 
 

@@ -1,5 +1,5 @@
 #include "AllPlayersPaymentCard.h"
-
+#include "Monopoly.h"
 AllPlayersPaymentCard::AllPlayersPaymentCard() : Card()
 {
 	amount = 0; //TODO: Make a constant
@@ -46,4 +46,26 @@ void AllPlayersPaymentCard::printCardInformation() const
 bool AllPlayersPaymentCard::isGetOutOfJail()
 {
 	return false;
+}
+
+void AllPlayersPaymentCard::applyCard(Player& player)
+{
+	Monopoly monopoly;
+
+	for (int i = 0; i < monopoly.getPlayersCount(); i++)
+	{
+		if (monopoly.getPlayer(i).getPlayersIndex() != player.getPlayersIndex()) {
+			if (amount < 0)
+			{
+				player.setPlayerMoney(player.getPlayersMoney() - monopoly.getPlayersCount() * amount * (-1));
+				Player current = monopoly.getPlayer(i);
+				current.setPlayerMoney(current.getPlayersMoney() + amount * (-1));
+			}
+			else {
+				player.setPlayerMoney(player.getPlayersMoney() + monopoly.
+					getPlayersCount() * amount);
+				Player current = monopoly.getPlayer(i);
+				current.setPlayerMoney(current.getPlayersMoney() - amount);
+			}
+		}
 }

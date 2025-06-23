@@ -1,7 +1,6 @@
 #pragma once
 #include "Command.h"
 #include "BuyPropertyCommand.h"
-#include "DrawCardCommand.h"
 #include "ExitGameCommand.h"
 #include "ResumeOldGameCommand.h"
 #include "RollDiceCommand.h"

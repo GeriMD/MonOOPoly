@@ -1,4 +1,5 @@
 #include "CardField.h"
+#include "CardDeck.h"
 
 CardField::CardField() : Field()
 {
@@ -27,5 +28,15 @@ void CardField::printFieldInformation() const
 {
     std::cout << description << std::endl;
     std::cout << index << std::endl; 
+}
+
+void CardField::applyEffect(Player& player)
+{
+    //TODO: Print description must go to the MonopolyEngine class
+    printDescription();
+    CardDeck& deck = CardDeck::getInstance();
+
+    deck.drawCard().get()->applyCard(player);
+
 }
 

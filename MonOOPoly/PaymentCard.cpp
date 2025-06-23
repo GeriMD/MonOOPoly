@@ -43,3 +43,7 @@ bool PaymentCard::isGetOutOfJail()
 {
 	return false;
 }
+
+void PaymentCard::applyCard(Player& player)
+{
+}

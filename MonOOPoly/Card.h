@@ -1,7 +1,7 @@
 #pragma once
 #include "MyString.h"
 #include <fstream>
-
+#include "Player.h"
 
 class Card
 {
@@ -18,6 +18,6 @@ public:
 	virtual void readFromFile(std::ifstream& is) = 0;
 	virtual void printCardInformation() const = 0;
 	virtual bool isGetOutOfJail() = 0;
-	//TODO: add interact with player function
+	virtual void applyCard(Player& player) = 0;
 };
 

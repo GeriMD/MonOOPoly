@@ -47,3 +47,7 @@ bool MovePositionCard::isGetOutOfJail()
 {
 	return false;
 }
+
+void MovePositionCard::applyCard(Player& player)
+{
+}

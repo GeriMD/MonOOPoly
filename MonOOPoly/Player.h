@@ -13,18 +13,27 @@ private:
 	int currentPlayerPositionIndex = 0;
 	int playersMoney = 0;
 	bool hasGetOutOfJailCard = false;
-
+	int stationOwnedCount = 0;
 	bool skipTurn = false;
+	bool isInJail = false;
 	//TODO: Add properties
 
 public:
 	Player();
-	Player(MyString name, int playerIndex, PlayerColour& colour); //TODO: Maybe add balance?
+	Player(const MyString& name, int playerIndex, PlayerColour& colour, int money); //TODO: Maybe add balance?
 
 	int getPlayersIndex() const;
 	int getCurrentPosition() const;
 	int getPlayersMoney() const;
-	
+	bool checkForGetOutOfJailCard() const;
+	int getStationCount() const;
+
+	void setCurrentPosition(int index);
+	void sendToJail();
+	void setPlayerMoney(int money);
+	void setPlayerName(const MyString& name);
+	void addStation();
+	void printPlayerInfo() const;
 	//TODO: add more functions
 
 };

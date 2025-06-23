@@ -11,5 +11,6 @@ public:
 	virtual void readFromFile(std::ifstream& is) override;
 
 	virtual void printFieldInformation() const override;
+	virtual void applyEffect(Player& player) override;
 };
 
