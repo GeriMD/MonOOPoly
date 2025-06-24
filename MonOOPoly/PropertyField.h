@@ -14,7 +14,7 @@ private:
 	unsigned cottagePrice;
 	unsigned castlePrice;
 	MyString ownerName;
-	Monopoly& monopoly = Monopoly::getInstance();
+
 public:
 	PropertyField();
 	PropertyField(MyString& name, unsigned priceToBuy, PropertyColour& colour, unsigned rent, unsigned cottagePrice, unsigned castlePrice, int index, MyString& description);

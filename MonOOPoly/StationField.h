@@ -8,7 +8,7 @@ class StationField : public Field
 private:
 	MyString name;
 	MyString ownerName;
-	Monopoly& monopoly = Monopoly::getInstance();
+	
 public:
 	StationField();
 	StationField(const MyString& name, int index, const MyString& description);

@@ -11,9 +11,9 @@ private:
 	int currentPlayerIndex = 0;
 
 	HeterogeneousContainer<Player> players;
-	//Board& board;
-	CommandFactory& factory;
-	Monopoly();
+	
+	
+	Monopoly() = default;
 public:
 	Monopoly(const Monopoly& other) = delete;
 	Monopoly& operator=(const Monopoly& other) = delete;

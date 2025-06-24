@@ -76,7 +76,11 @@ void Player::addStation()
 
 void Player::printPlayerInfo() const
 {
-    std::cout << "Name: " << name << " Money: " << playersMoney << " Position: " << currentPlayerPositionIndex << " Has OOJ card: " << hasGetOutOfJailCard << " Is in jail: " << isInJail << " Skip turn: " << skipTurn << std::endl;
+    std::cout << "Name: " << name << " Money: " << playersMoney << std::endl;
+    std::cout << "Position on board: " << currentPlayerPositionIndex << std::endl;
+    std::cout << "Has Get out of jail card: " << hasGetOutOfJailCard << std::endl;
+    std::cout << "Is in jail: " << isInJail << " Skip turn: " << skipTurn << std::endl;
+    std::cout << "Station owned count: " << stationOwnedCount << std::endl;
 }
 
 void Player::setHasGetOOJCard()

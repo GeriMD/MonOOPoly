@@ -46,6 +46,7 @@ void StationField::printFieldInformation() const
 
 void StationField::applyEffect(Player& player)
 {
+    Monopoly& monopoly = Monopoly::getInstance();
     Player* owner = monopoly.getPlayerByName(ownerName);
     if (owner == nullptr)
     {

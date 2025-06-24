@@ -1,9 +1,6 @@
 #include "Monopoly.h"
 
-Monopoly::Monopoly()
-	: //board(Board::getInstance()),
-	factory(CommandFactory::getInstance())
-{ }
+
 
 Monopoly& Monopoly::getInstance()
 {
@@ -43,20 +40,28 @@ void Monopoly::playTurn(int index)
 void Monopoly::startGame()
 {
 	std::cout << "Welcome" << std::endl;
+	again_enter_players:
 	std::cout << "Please enter number of players: ";
 	int number;
 	std::cin >> number;
+	if (number < 2 || number > 6)
+	{
+		std::cout << "Invalid input! Players must be between 2 and 6!" << std::endl;
+		goto again_enter_players;
+	}
 
 	for (int i = 0; i < number; i++)
 	{
-		std::cout << "Please enter player " << i + 1 << " name.";
+		std::cout << "Please enter player " << i + 1 << " name: ";
 		MyString name;
 		std::cin >> name;
 
 		players.addObject(Player(name, i, 1500));
+		
 	}
-
 	for (int i = 0; i < players.getSize(); i++)
-	{players[i]->printPlayerInfo() ;
+	{
+		players[i]->printPlayerInfo();
 	}
+	
 }

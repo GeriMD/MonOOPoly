@@ -5,7 +5,7 @@ class AllPlayersPaymentCard : public Card
 {
 private:
 	int amount;
-	Monopoly& monopoly = Monopoly::getInstance();
+	
 
 public:
 	AllPlayersPaymentCard();

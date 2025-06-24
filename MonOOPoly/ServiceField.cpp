@@ -65,8 +65,9 @@ void ServiceField::setOwner(MyString& ownerName)
 
 void ServiceField::applyEffect(Player& player)
 {
+	Monopoly& monopoly = Monopoly::getInstance();
 	Player* owner = monopoly.getPlayerByName(ownerName);
-	CommandFactory& factory = CommandFactory::getInstance();
+	//CommandFactory& factory = CommandFactory::getInstance();
 	
 	if (owner == nullptr)
 	{
@@ -88,8 +89,8 @@ void ServiceField::applyEffect(Player& player)
 		std::cout << "This service has an owner. You must roll the dice again. Please enter roll." << std::endl;
 		MyString answer;
 		std::cin >> answer;
-
-		factory.readCommand(answer)->executeCommand();
+		//TODO:
+		//factory.readCommand(answer)->executeCommand();
 		
 		//int diceSum; // TODO: GET FROM THE COMMAND
 		//player.setPlayerMoney(player.getPlayersMoney() - diceSum * 5);

@@ -7,7 +7,7 @@ class ServiceField : public Field
 private:
 	ServiceType type;
 	MyString ownerName;
-	Monopoly& monopoly = Monopoly::getInstance();
+
 public:
 	ServiceField();
 	ServiceField(ServiceType& type, int index, const MyString& description);

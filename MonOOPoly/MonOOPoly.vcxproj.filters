@@ -63,9 +63,6 @@
     <ClInclude Include="PolymorphicPtr.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Field.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="StationField.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -112,6 +109,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Dice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Field.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

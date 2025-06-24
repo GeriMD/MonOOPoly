@@ -135,6 +135,7 @@ void PropertyField::printFieldInformation() const
 
 void PropertyField::applyEffect(Player& player)
 {
+	Monopoly& monopoly = Monopoly::getInstance();
 	Player* owner = monopoly.getPlayerByName(ownerName);
 	
 	if (owner == nullptr)
