@@ -12,6 +12,18 @@ Player* Monopoly::getPlayer(int index)
 	return players[index];
 }
 
+Player* Monopoly::getPlayerByName(const MyString& name)
+{
+	for (int i = 0; i < players.getSize(); i++)
+	{
+		if (players[i]->getName() == name)
+		{
+			return players[i];
+		}
+	}
+	return nullptr;
+}
+
 int Monopoly::getPlayersCount() const
 {
 	return players.getSize();

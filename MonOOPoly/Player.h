@@ -27,6 +27,7 @@ public:
 	int getPlayersMoney() const;
 	bool checkForGetOutOfJailCard() const;
 	int getStationCount() const;
+	const MyString& getName() const;
 
 	void setCurrentPosition(int index);
 	void sendToJail();

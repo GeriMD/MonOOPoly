@@ -37,6 +37,11 @@ int Player::getStationCount() const
     return stationOwnedCount;
 }
 
+const MyString& Player::getName() const
+{
+    return name;
+}
+
 void Player::setCurrentPosition(int index)
 {
     currentPlayerPositionIndex = index;

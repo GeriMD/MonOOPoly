@@ -9,7 +9,7 @@ PropertyField::PropertyField() : Field()
 	rent = 0;
 	cottagePrice = 0;
 	castlePrice = 0;
-
+	this->ownerName = "";
 }
 
 PropertyField::PropertyField(MyString& name, unsigned priceToBuy, PropertyColour& colour, unsigned rent, unsigned cottagePrice, unsigned castlePrice, int index, MyString& description) : Field(index, description)
@@ -20,6 +20,12 @@ PropertyField::PropertyField(MyString& name, unsigned priceToBuy, PropertyColour
 	this->cottagePrice = cottagePrice;
 	this->rent = rent;
 	this->castlePrice = castlePrice;
+	this->ownerName = "";
+}
+
+void PropertyField::setOwner(MyString& ownerName)
+{
+	this->ownerName = ownerName;
 }
 
 Field* PropertyField::clone() const
@@ -125,12 +131,13 @@ void PropertyField::printFieldInformation() const
 	std::cout << "Buy cottage for: " << cottagePrice << std::endl;
 	std::cout << "Buy castle for: " << castlePrice << std::endl;
 }
-void PropertyField::setOwner(Player* owner) {
-	this->owner = owner;
+void PropertyField::setOwner(MyString& ownerName) {
+	this->ownerName = ownerName;
 }
 
 void PropertyField::applyEffect(Player& player)
 {
+	Player* owner = monopoly.getPlayerByName(ownerName);
 	CommandFactory& factory = CommandFactory::getInstance();
 	if (owner == nullptr)
 	{
@@ -143,10 +150,10 @@ void PropertyField::applyEffect(Player& player)
 		factory.readCommand(answer)->executeCommand();
 	}
 	else {
-		std::cout << "This property has an owner. You must pay him rent." << std::endl;
+		std::cout << "This property has an owner. You must pay rent to: "<< ownerName << std::endl;
 		
 		player.setPlayerMoney(player.getPlayersMoney() - rent);
-		this->owner->setPlayerMoney(this->owner->getPlayersMoney() + rent);
+		owner->setPlayerMoney(owner->getPlayersMoney() + rent);
 	}
 }
 

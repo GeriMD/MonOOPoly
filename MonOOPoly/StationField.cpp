@@ -11,10 +11,10 @@ StationField::StationField(const MyString& name, int index, const MyString& desc
     this->name = name;
 }
 
-void StationField::setOwner(Player* owner)
+void StationField::setOwner(MyString& ownerName)
 {
-    this->owner = owner;
-    this->owner->addStation();
+    this->ownerName = ownerName;
+  
 }
 
 Field* StationField::clone() const
@@ -46,6 +46,7 @@ void StationField::printFieldInformation() const
 
 void StationField::applyEffect(Player& player)
 {
+    Player* owner = monopoly.getPlayerByName(ownerName);
     if (owner == nullptr)
     {
         std::cout << "This station does not have an owner. Do you want to buy it? Please enter buy_property/cancel." << std::endl;
@@ -59,8 +60,9 @@ void StationField::applyEffect(Player& player)
         factory.readCommand(answer)->executeCommand();
     }
     else {
-        std::cout << "This station has an owner. You must pay him rent." << std::endl;
+        std::cout << "This station has an owner. You must pay rent to: " << ownerName << std::endl;
+        
         player.setPlayerMoney(player.getPlayersMoney() - owner->getStationCount() * 50);
-        this->owner->setPlayerMoney(this->owner->getPlayersMoney() + owner->getStationCount() * 50);
+        owner->setPlayerMoney(owner->getPlayersMoney() + owner->getStationCount() * 50);
     }
 }

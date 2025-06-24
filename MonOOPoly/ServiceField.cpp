@@ -4,11 +4,13 @@
 ServiceField::ServiceField() : Field()
 {
 	type = ServiceType::DEFAULT;
+	ownerName = "";
 }
 
 ServiceField::ServiceField(ServiceType& type, int index, const MyString& description) : Field(index, description)
 {
 	this -> type = type;
+	ownerName = "";
 }
 
 Field* ServiceField::clone() const
@@ -56,14 +58,16 @@ void ServiceField::printFieldInformation() const
 		std::cout << "NO TYPE!!!" << std::endl;
 	}
 }
-void ServiceField::setOwner(Player* owner)
+void ServiceField::setOwner(MyString& ownerName)
 {
-	this->owner = owner;
+	this->ownerName = ownerName;
 }
 
 void ServiceField::applyEffect(Player& player)
 {
+	Player* owner = monopoly.getPlayerByName(ownerName);
 	CommandFactory& factory = CommandFactory::getInstance();
+	
 	if (owner == nullptr)
 	{
 		std::cout << "This service does not have an owner. Do you want to buy it? Please enter buy_property/cancel." << std::endl;
@@ -83,6 +87,7 @@ void ServiceField::applyEffect(Player& player)
 		
 		int diceSum; // TODO: GET FROM THE COMMAND
 		player.setPlayerMoney(player.getPlayersMoney() - diceSum * 5);
-		this->owner->setPlayerMoney(this->owner->getPlayersMoney() + diceSum * 5);
+	
+		owner->setPlayerMoney(owner->getPlayersMoney() + diceSum * 5);
 	}
 }

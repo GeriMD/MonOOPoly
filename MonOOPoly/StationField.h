@@ -2,18 +2,18 @@
 #include "Field.h"
 #include "MyString.h"
 #include "Player.h"
-
+#include "Monopoly.h"
 class StationField : public Field
 {
 private:
 	MyString name;
-	Player* owner = nullptr;
-
+	MyString ownerName;
+	Monopoly& monopoly = Monopoly::getInstance();
 public:
 	StationField();
 	StationField(const MyString& name, int index, const MyString& description);
 	
-	void setOwner(Player* owner);
+	void setOwner(MyString& ownerName);
 	
 
 	virtual Field* clone() const override;

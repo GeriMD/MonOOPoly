@@ -32,4 +32,5 @@ void StartField::printFieldInformation() const
 
 void StartField::applyEffect(Player& player)
 {
+    player.setPlayerMoney(player.getPlayersMoney() + 200); //TODO: make a constant
 }
