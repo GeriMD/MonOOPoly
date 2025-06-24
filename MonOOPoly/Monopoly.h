@@ -4,6 +4,7 @@
 #include "Board.h"
 #include "HeterogeneousContainer.hpp"
 #include "CommandFactory.h"
+#include "Dice.h"
 class Monopoly
 {
 private:
@@ -26,5 +27,7 @@ public:
 	void addPlayer(const Player& player);
 	void playTurn(int index);
 	void startGame();
+	void printWelcomeText();
+	void printRules();
 };
 

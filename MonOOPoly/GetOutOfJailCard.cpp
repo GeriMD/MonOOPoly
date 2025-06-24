@@ -37,5 +37,6 @@ bool GetOutOfJailCard::isGetOutOfJail()
 void GetOutOfJailCard::applyCard(Player& player)
 {
 	//TODO: Ask if it wants to get or sell it!
+	printDescription();
 	player.setHasGetOOJCard();
 }

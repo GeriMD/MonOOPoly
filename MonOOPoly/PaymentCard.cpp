@@ -46,6 +46,7 @@ bool PaymentCard::isGetOutOfJail()
 
 void PaymentCard::applyCard(Player& player)
 {
+	printDescription();
 	if (amount < 0)
 	{
 		player.setPlayerMoney(player.getPlayersMoney() - amount * (-1));

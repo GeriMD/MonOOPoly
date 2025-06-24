@@ -33,10 +33,12 @@ void CardField::printFieldInformation() const
 void CardField::applyEffect(Player& player)
 {
     //TODO: Print description must go to the MonopolyEngine class
-    printDescription();
+   // printDescription();
     CardDeck& deck = CardDeck::getInstance();
 
     deck.drawCard().get()->applyCard(player);
+
+    
 
 }
 

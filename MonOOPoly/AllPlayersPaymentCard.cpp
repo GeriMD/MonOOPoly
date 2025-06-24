@@ -51,6 +51,7 @@ bool AllPlayersPaymentCard::isGetOutOfJail()
 void AllPlayersPaymentCard::applyCard(Player& player)
 {
 	Monopoly& monopoly = Monopoly::getInstance();
+	printDescription();
 	for (int i = 0; i < monopoly.getPlayersCount(); i++)
 	{
 		if (player.getPlayersIndex() != monopoly.getPlayer(i)->getPlayersIndex())
