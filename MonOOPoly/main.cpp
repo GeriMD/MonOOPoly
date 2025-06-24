@@ -2,12 +2,13 @@
 #include "Card.h"
 #include "CardDeck.h"
 #include "Board.h"
+#include "Dice.h"
 
 int main()
 {
     std::cout << "Program started." << std::endl;
 
-	Player player;
+	/*Player player;
 	player.setPlayerMoney(1500);
 	player.setCurrentPosition(0);
 	player.setPlayerName("Ivan");
@@ -22,6 +23,14 @@ int main()
 	board.getField(5)->applyEffect(player);
 	player.printPlayerInfo();
 	stationOwner.printPlayerInfo();
+	*/
+
+	Dice& dice = Dice::getInstance();
+
+	dice.rollDice();
+
+	std::cout << "Sum: " << dice.getSumOfTheDice() << std::endl;
+	std::cout << dice.getIsPair() << std::endl;
 	return 0;
 
 }

@@ -22,13 +22,14 @@ public:
 	Player();
 	Player(const MyString& name, int playerIndex, PlayerColour& colour, int money); //TODO: Maybe add balance?
 
+	virtual ~Player() = default;
 	int getPlayersIndex() const;
 	int getCurrentPosition() const;
 	int getPlayersMoney() const;
 	bool checkForGetOutOfJailCard() const;
 	int getStationCount() const;
 	const MyString& getName() const;
-
+	virtual Player* clone() const;
 	void setCurrentPosition(int index);
 	void sendToJail();
 	void setPlayerMoney(int money);

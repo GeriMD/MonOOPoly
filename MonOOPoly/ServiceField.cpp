@@ -85,9 +85,9 @@ void ServiceField::applyEffect(Player& player)
 
 		factory.readCommand(answer)->executeCommand();
 		
-		int diceSum; // TODO: GET FROM THE COMMAND
-		player.setPlayerMoney(player.getPlayersMoney() - diceSum * 5);
+		//int diceSum; // TODO: GET FROM THE COMMAND
+		//player.setPlayerMoney(player.getPlayersMoney() - diceSum * 5);
 	
-		owner->setPlayerMoney(owner->getPlayersMoney() + diceSum * 5);
+		//owner->setPlayerMoney(owner->getPlayersMoney() + diceSum * 5);
 	}
 }

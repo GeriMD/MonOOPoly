@@ -131,9 +131,7 @@ void PropertyField::printFieldInformation() const
 	std::cout << "Buy cottage for: " << cottagePrice << std::endl;
 	std::cout << "Buy castle for: " << castlePrice << std::endl;
 }
-void PropertyField::setOwner(MyString& ownerName) {
-	this->ownerName = ownerName;
-}
+
 
 void PropertyField::applyEffect(Player& player)
 {

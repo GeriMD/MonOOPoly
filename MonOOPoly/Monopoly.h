@@ -13,7 +13,7 @@ private:
 	HeterogeneousContainer<Player> players;
 	Board& board = Board::getInstance();
 	
-	Monopoly();
+	Monopoly() = default;
 public:
 	Monopoly(const Monopoly& other) = delete;
 	Monopoly& operator=(const Monopoly& other) = delete;

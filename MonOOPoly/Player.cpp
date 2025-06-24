@@ -78,3 +78,6 @@ void Player::setHasGetOOJCard()
 {
     hasGetOutOfJailCard = true;
 }
+Player* Player::clone() const {
+    return new Player(*this);  
+}

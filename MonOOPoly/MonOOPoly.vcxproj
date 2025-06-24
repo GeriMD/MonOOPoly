@@ -139,6 +139,7 @@
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommandFactory.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="Dice.h" />
     <ClInclude Include="ExitGameCommand.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="FreeParkingField.h" />
@@ -181,6 +182,7 @@
     <ClCompile Include="CardField.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="CommandFactory.cpp" />
+    <ClCompile Include="Dice.cpp" />
     <ClCompile Include="ExitGameCommand.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="FreeParkingField.cpp" />
