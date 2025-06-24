@@ -70,13 +70,19 @@ void ServiceField::applyEffect(Player& player)
 	
 	if (owner == nullptr)
 	{
-		std::cout << "This service does not have an owner. Do you want to buy it? Please enter buy_property/cancel." << std::endl;
+		std::cout << "This service does not have an owner. Do you want to buy it? Yes/No [y/n]" << std::endl;
 		std::cout << "Answer: ";
-
-		MyString answer;
+		char answer;
 		std::cin >> answer;
 
-		factory.readCommand(answer)->executeCommand();
+		switch (answer) {
+		case 'y':
+		case 'Y': ownerName = player.getName(); break;
+		case 'n':
+		case 'N': std::cout << "You did not buy this service."; break;
+		//default:
+			//throws exception
+		}
 	}
 	else {
 		std::cout << "This service has an owner. You must roll the dice again. Please enter roll." << std::endl;

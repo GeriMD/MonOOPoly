@@ -49,15 +49,19 @@ void StationField::applyEffect(Player& player)
     Player* owner = monopoly.getPlayerByName(ownerName);
     if (owner == nullptr)
     {
-        std::cout << "This station does not have an owner. Do you want to buy it? Please enter buy_property/cancel." << std::endl;
+        std::cout << "This station does not have an owner. Do you want to buy it? Yes/No [y/n]" << std::endl;
         std::cout << "Answer: ";
-
-        MyString answer;
+        char answer;
         std::cin >> answer;
 
-        CommandFactory& factory = CommandFactory::getInstance();
-
-        factory.readCommand(answer)->executeCommand();
+        switch (answer) {
+        case 'y':
+        case 'Y': { ownerName = player.getName(); player.addStation(); break; }
+        case 'n':
+        case 'N': std::cout << "You did not buy this property."; break;
+       // default:
+            //throws exception
+        }
     }
     else {
         std::cout << "This station has an owner. You must pay rent to: " << ownerName << std::endl;

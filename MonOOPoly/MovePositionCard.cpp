@@ -50,7 +50,7 @@ bool MovePositionCard::isGetOutOfJail()
 
 void MovePositionCard::applyCard(Player& player)
 {
-	player.setCurrentPosition(positionsCount);
+	player.movePlayerTo(positionsCount);
 	Board& board = Board::getInstance();
 
 	board.getField(positionsCount)->applyEffect(player);

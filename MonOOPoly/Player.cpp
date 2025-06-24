@@ -4,11 +4,10 @@ Player::Player()
 {
 }
 
-Player::Player(const MyString& name, int playerIndex, PlayerColour& colour, int money)
+Player::Player(const MyString& name, int playerIndex, int money)
 {
     this->name = name;
     this->playerIndex = playerIndex;
-    this->colour = colour;
     this->playersMoney = money;
 }
 
@@ -53,6 +52,12 @@ void Player::sendToJail()
     skipTurn = true;
 }
 
+void Player::getOutOfJail()
+{
+    isInJail = false;
+    skipTurn = false;
+}
+
 void Player::setPlayerMoney(int money)
 {
     playersMoney = money;
@@ -78,6 +83,49 @@ void Player::setHasGetOOJCard()
 {
     hasGetOutOfJailCard = true;
 }
+void Player::setRolledPair(bool rolledPair)
+{
+   this->rolledPair = rolledPair;
+}
+bool Player::shouldSkipTurn()
+{
+    return skipTurn;
+}
+void Player::movePlayerWith(int positions)
+{
+    int newPosition = currentPlayerPositionIndex + positions;
+
+    if (newPosition / 40 != 0)
+    {
+        newPosition %= 40; //TODO: make constant!
+        setPlayerMoney(getPlayersMoney() + 200);
+        std::cout << "You passed START so you earned 200 BGN." << std::endl;
+    }
+    currentPlayerPositionIndex = newPosition;
+}
+void Player::movePlayerTo(int position)
+{
+    if (position < currentPlayerPositionIndex)
+    {
+        setPlayerMoney(getPlayersMoney() + 200); //TODO: make constant!
+        std::cout << "You passed START so you earned 200 BGN." << std::endl;
+    }
+    currentPlayerPositionIndex = position;
+}
+void Player::setSkipTurn(bool skip)
+{
+    this->skipTurn = skip;
+}
 Player* Player::clone() const {
     return new Player(*this);  
+}
+
+bool Player::getIsInJail() const
+{
+    return isInJail;
+}
+
+bool Player::getRolledPair() const
+{
+    return rolledPair;
 }
