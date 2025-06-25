@@ -14,6 +14,8 @@ private:
 	unsigned cottagePrice;
 	unsigned castlePrice;
 	MyString ownerName;
+	int cottageCount = 0;
+	int castleCount = 0;
 
 public:
 	PropertyField();
@@ -24,5 +26,10 @@ public:
 	virtual void readFromFile(std::ifstream& is) override;
 	virtual void printFieldInformation() const override;
 	virtual void applyEffect(Player& player) override;
+	void increaseCottageCount();
+	void increaseCastleCount();
+	const MyString& getOwnerName() const;
+	int getCottagePrice() const;
+	int getCastlePrice() const;
 };
 

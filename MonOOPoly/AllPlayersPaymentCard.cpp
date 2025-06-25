@@ -84,6 +84,22 @@ void AllPlayersPaymentCard::applyCard(Player& player)
 			player.setPlayerMoney(monopoly.getPlayer(i).getPlayersMoney() + amount *
 				(monopoly.getPlayersCount() - 1));
 			monopoly.getPlayer(i).setPlayerMoney(monopoly.getPlayer(i).getPlayersMoney() - amount);
+			
+			
+		}
+	}
+	for (int i = 0; i < monopoly.getPlayersCount(); i++) {
+		if (player.getName() == monopoly.getPlayer(i).getName())	
+		{
+			monopoly.getPlayer(i).checkIfHasMoneyToPay(amount * (monopoly.getPlayersCount() - 1));
+			if (monopoly.getPlayer(i).getIsBancrupted())
+				std::cout << "\n" << monopoly.getPlayer(i).getName() << "has no money\n";
+		}
+			
+		else {
+			monopoly.getPlayer(i).checkIfHasMoneyToPay(amount);
+			if (monopoly.getPlayer(i).getIsBancrupted())
+				std::cout << "\n" << monopoly.getPlayer(i).getName() << "has no money\n";
 		}
 	}
 	

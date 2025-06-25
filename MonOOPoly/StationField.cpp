@@ -1,5 +1,4 @@
 #include "StationField.h"
-#include "CommandFactory.h"
 
 StationField::StationField() : Field()
 {

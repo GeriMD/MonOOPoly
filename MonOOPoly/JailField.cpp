@@ -31,4 +31,5 @@ void JailField::printFieldInformation() const
 
 void JailField::applyEffect(Player& player)
 {
+    std::cout << "You are just visiting the jail...";
 }

@@ -93,16 +93,7 @@
     <ClInclude Include="TaxField.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Command.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SaveGameCommand.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RollDiceCommand.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CommandFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Monopoly.h">
@@ -174,15 +165,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TaxField.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Command.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RollDiceCommand.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CommandFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Monopoly.cpp">

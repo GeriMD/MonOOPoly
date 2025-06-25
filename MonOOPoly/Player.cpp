@@ -1,5 +1,7 @@
 #include "Player.h"
-
+#include "Dice.h"
+#include "Board.h"
+#include "PropertyField.h"
 Player::Player()
 {
 }
@@ -49,7 +51,7 @@ void Player::setCurrentPosition(int index)
 void Player::sendToJail()
 {
     isInJail = true;
-    skipTurn = true;
+    //skipTurn = true;
 }
 
 void Player::getOutOfJail()
@@ -59,7 +61,9 @@ void Player::getOutOfJail()
 }
 
 void Player::setPlayerMoney(int money)
+
 {
+
     playersMoney = money;
 }
 
@@ -130,8 +134,96 @@ void Player::checkIfHasMoneyToPay(int amount)
     if (getPlayersMoney() < amount)
     {
         setIsBancrupted(true);
-        std::cout << "hjvfghgh";
+        //std::cout << "1";
     }
+}
+void Player::buyCottage(int index)
+{
+    Board& board = Board::getInstance();
+    PropertyField* property = dynamic_cast<PropertyField*>(&board.getField(index));
+    if (!property)
+    {
+        std::cout << "Invalid index! Field on this index is not a property!" << std::endl;
+        system("pause");
+        return;
+   }
+    if (!hasProperty(index))
+    {
+        std::cout << "Player " << name << " does not own this property!" << std::endl;
+        system("pause");
+        return;
+    }
+    property->increaseCottageCount();
+    setPlayerMoney(getPlayersMoney() - property->getCottagePrice());
+    std::cout << property->getCottagePrice();
+    std::cout << "bought cottage";
+}
+void Player::buyCastle(int index)
+{
+    Board& board = Board::getInstance();
+    PropertyField* property = dynamic_cast<PropertyField*>(&board.getField(index));
+    if (!property)
+    {
+        std::cout << "Invalid index! Field on this index is not a property!" << std::endl;
+        return;
+    }
+    if (!hasProperty(index))
+    {
+        std::cout << "Player " << name << " does not own this property!" << std::endl;
+        system("pause");
+        return;
+    }
+    property->increaseCastleCount();
+    setPlayerMoney(getPlayersMoney() - property->getCastlePrice());
+}
+void Player::checkIsJail()
+{
+    if (isInJail) {
+        Dice& dice = Dice::getInstance();
+        jail:
+        std::cout << "You are in jail." << std::endl;
+        if (checkForGetOutOfJailCard())
+        {
+std::cout << "You have get ouf of jail card. You can either use it or roll dice or pay 200 BGN to get out. [u/r/p]" << std::endl;
+        
+        }
+        else {
+            std::cout << "Choose to roll the dice or pay 200 BGN." << std::endl;
+        }
+        char ans;
+        std::cin >> ans;
+
+        if (ans == 'r') {
+            dice.rollDice();
+            if (dice.getIsPair())
+                isInJail = false;
+        }
+        else if (ans == 'p') {
+            setPlayerMoney(getPlayersMoney() - 200);
+            isInJail = false;
+        }
+        else if (ans == 'c' && checkForGetOutOfJailCard()) {
+            isInJail = false;
+            hasGetOutOfJailCard = false;
+        }
+        else goto jail;
+    }
+}
+bool Player::hasProperty(int index)
+{
+    Board& board = Board::getInstance();
+    PropertyField* property = dynamic_cast<PropertyField*>(&board.getField(index));
+    if (!property)
+    {
+        std::cout << "Invalid index! Field on this index is not a property!" << std::endl;
+        return false;
+    }
+
+    if (property->getOwnerName() == getName())
+    {
+        return true;
+    }
+    return false;
 }
 Player* Player::clone() const {
     return new Player(*this);  

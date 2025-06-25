@@ -7,11 +7,11 @@ class Dice
 
 private:
 	int sumOfTheDice;
-	Dice() = default;
 	bool isPair;
-
+Dice() = default;
 public:
 	Dice(const Dice& other) = delete;
+	
 	Dice& operator=(const Dice& other) = delete;
 	void rollDice();
 	static Dice& getInstance();

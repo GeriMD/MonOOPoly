@@ -54,5 +54,5 @@ void MovePositionCard::applyCard(Player& player)
 	player.movePlayerTo(positionsCount);
 	Board& board = Board::getInstance();
 
-	board.getField(positionsCount)->applyEffect(player);
+	board.getField(positionsCount).applyEffect(player);
 }

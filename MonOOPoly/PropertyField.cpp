@@ -1,5 +1,4 @@
 #include "PropertyField.h"
-#include "CommandFactory.h"
 
 PropertyField::PropertyField() : Field()
 {
@@ -165,6 +164,34 @@ char answer;
 		player.setPlayerMoney(player.getPlayersMoney() - rent);
 		owner->setPlayerMoney(owner->getPlayersMoney() + rent);
 	}
+}
+
+void PropertyField::increaseCottageCount()
+{
+	cottageCount++;
+	rent += rent / 5;
+
+}
+
+void PropertyField::increaseCastleCount()
+{
+	castleCount++;
+	rent += rent / 2;
+}
+
+const MyString& PropertyField::getOwnerName() const
+{
+	return ownerName;
+}
+
+int PropertyField::getCottagePrice() const
+{
+	return cottagePrice;
+}
+
+int PropertyField::getCastlePrice() const
+{
+	return castlePrice;
 }
 
 

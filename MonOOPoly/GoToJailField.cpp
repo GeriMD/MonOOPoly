@@ -34,5 +34,5 @@ void GoToJailField::applyEffect(Player& player)
     printDescription();
 
     player.setCurrentPosition(10);
-   // player.sendToJail();
+    player.sendToJail();
 }

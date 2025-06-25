@@ -132,8 +132,6 @@
     <ClInclude Include="Card.h" />
     <ClInclude Include="CardDeck.h" />
     <ClInclude Include="CardField.h" />
-    <ClInclude Include="Command.h" />
-    <ClInclude Include="CommandFactory.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Field.h" />
@@ -153,7 +151,6 @@
     <ClInclude Include="PropertyField.h" />
     <ClInclude Include="PropertyColour.h" />
     <ClInclude Include="Queue.hpp" />
-    <ClInclude Include="RollDiceCommand.h" />
     <ClInclude Include="SaveGameCommand.h" />
     <ClInclude Include="ServiceField.h" />
     <ClInclude Include="ServiceType.h" />
@@ -167,8 +164,6 @@
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="CardDeck.cpp" />
     <ClCompile Include="CardField.cpp" />
-    <ClCompile Include="Command.cpp" />
-    <ClCompile Include="CommandFactory.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="FreeParkingField.cpp" />
@@ -182,7 +177,6 @@
     <ClCompile Include="PaymentCard.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PropertyField.cpp" />
-    <ClCompile Include="RollDiceCommand.cpp" />
     <ClCompile Include="ServiceField.cpp" />
     <ClCompile Include="StartField.cpp" />
     <ClCompile Include="StationField.cpp" />

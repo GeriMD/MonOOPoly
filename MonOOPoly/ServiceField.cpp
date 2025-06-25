@@ -1,5 +1,4 @@
 #include "ServiceField.h"
-#include "CommandFactory.h"
 
 ServiceField::ServiceField() : Field()
 {

@@ -12,7 +12,7 @@ public:
 	Board(const Board& other) = delete;
 	Board& operator=(const Board& other) = delete;
 	Field* createField(int type);
-	Field* getField(int index) const;
+	Field& getField(int index) const;
 	static Board& getInstance();
 };
 

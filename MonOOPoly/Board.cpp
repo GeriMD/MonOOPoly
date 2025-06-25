@@ -69,7 +69,7 @@ Field* Board::createField(int type)
    // TODO: throw exception
 }
 
-Field* Board::getField(int index) const
+Field& Board::getField(int index) const
 {
     if (index < 0 || index > 39)
     {
@@ -81,7 +81,7 @@ Field* Board::getField(int index) const
         throw std::invalid_argument("There is no such a field.");
     }
 
-    return fields[index];
+    return *fields[index];
 }
 
 Board& Board::getInstance()

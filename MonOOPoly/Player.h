@@ -1,6 +1,7 @@
 #pragma once
 #include "MyString.h"
 #include "PlayerColour.h"
+
 #pragma warning(disable:4996)
 
 class Player
@@ -50,7 +51,12 @@ public:
 
 	void setIsBancrupted(bool isBancrupted);
 	void checkIfHasMoneyToPay(int amount);
+	void checkHasAllFromAColour();
+	void buyCottage(int index);
+	void buyCastle(int index);
 	//TODO: add more functions
 
+	void checkIsJail();
+	bool hasProperty(int index);
 };
 

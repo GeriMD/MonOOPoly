@@ -49,16 +49,20 @@ void Monopoly::playTurn(int index)
 		Player& player = getPlayer(index);
 		//Board& board = Board::getInstance();
 	do {
-		
 		std::cout << "Player " << index + 1 << std::endl;
+		player.checkIsJail();
+
+		if (player.getIsInJail()) {
+			break;
+		}
 		std::cout << "It is your turn. Roll the dice!" << std::endl;
 		Sleep(1000);
 		dice.rollDice();
 		int positionsToMove = dice.getSumOfTheDice();
 
 		player.movePlayerWith(positionsToMove);
-		board.getField(player.getCurrentPosition())->printDescription();
-		board.getField(player.getCurrentPosition())->applyEffect(player);
+		board.getField(player.getCurrentPosition()).printDescription();
+		board.getField(player.getCurrentPosition()).applyEffect(player);
 		Sleep(2000);
 		player.printPlayerInfo();
 		Sleep(1000);
@@ -135,26 +139,13 @@ bool Monopoly::getGameOver()
 
 void Monopoly::test()
 {
-	CardDeck& deck = CardDeck::getInstance();
-	for (int i = 0; i < 2; i++) {
-		deck.drawCard();
-}
-	Player* player1 = new Player("Pl1",0,1500);
-	Player* player2 = new Player("Pl2",0,1500);
-	Player* player3 = new Player("Pl3",0,1500);
-	Player* player4 = new Player("Pl4",0,1500);
-	//Player* player2("Pl2",0,100);
-	//Player* player3("Pl3",0,100);
-	//Player* player4("Pl4",0,100);
-	players.addObject(player1);
-	players.addObject(player2);
-	players.addObject(player3);
-	players.addObject(player4);
-	deck.drawCard().get()->applyCard(*player3);
+	Player* player = new Player("pl1", 0, 1500);
+	Player* pl = new Player("pl2", 0, 1500);
+	players.addObject(player);
+	players.addObject(pl);
+player->movePlayerTo(37);
+board.getField(37).applyEffect(*player);
+player->buyCottage(37);
+player->printPlayerInfo();
 
-	//std::cout << player1.getName();
-	std::cout << (*player3).getPlayersMoney()<<"\n";
-	std::cout << (*player1).getPlayersMoney()<<"\n";
-	std::cout << (*player2).getPlayersMoney()<<"\n";
-	std::cout << (*player4).getPlayersMoney()<<"\n";
 }
