@@ -29,5 +29,6 @@ public:
 	void startGame();
 	void printWelcomeText();
 	void printRules();
+	bool getGameOver();
 };
 

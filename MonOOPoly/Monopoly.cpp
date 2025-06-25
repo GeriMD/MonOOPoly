@@ -1,6 +1,7 @@
 #include "Monopoly.h"
 #include <windows.h>
-
+Dice& dice = Dice::getInstance();
+Board& board = Board::getInstance();
 
 Monopoly& Monopoly::getInstance()
 {
@@ -41,10 +42,10 @@ void Monopoly::addPlayer(const Player& player)
 
 void Monopoly::playTurn(int index)
 {
-Dice& dice = Dice::getInstance();
-		CommandFactory& factory = CommandFactory::getInstance();
+//Dice& dice = Dice::getInstance();
+		
 		Player* player = getPlayer(index);
-		Board& board = Board::getInstance();
+		//Board& board = Board::getInstance();
 	do {
 		
 		std::cout << "Player " << index + 1 << std::endl;
@@ -53,7 +54,7 @@ Dice& dice = Dice::getInstance();
 		dice.rollDice();
 		int positionsToMove = dice.getSumOfTheDice();
 
-		player->setCurrentPosition(getCurrentPlayerIndex() + positionsToMove);
+		player->movePlayerWith(positionsToMove);
 		board.getField(player->getCurrentPosition())->printDescription();
 		board.getField(player->getCurrentPosition())->applyEffect(*player);
 		Sleep(2000);
@@ -91,8 +92,14 @@ void Monopoly::startGame()
 		players[i]->printPlayerInfo();
 		std::cout << std::endl;
 	}
-	
-playTurn(0);
+	while (!getGameOver() || players.getSize() == 1)
+	{
+		for (int i = 0; i < players.getSize(); i++)
+		{
+			playTurn(i);
+		}
+	}
+//playTurn(0);
 }
 
 
@@ -116,4 +123,9 @@ void Monopoly::printRules()
 	std::cout << "If you can't pay what you owe, you go bankrupt and are out of the game." << std::endl;
 	std::cout << "The last player remaining wins the game!" << std::endl;
 
+}
+
+bool Monopoly::getGameOver()
+{
+	return gameOver;
 }

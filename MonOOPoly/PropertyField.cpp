@@ -147,7 +147,8 @@ char answer;
 
 		switch (answer) {
 		case 'y':
-		case 'Y': ownerName = player.getName(); break;
+		case 'Y': { ownerName = player.getName(); player.setPlayerMoney(player.getPlayersMoney() - priceToBuy);
+			break; }
 		case 'n':
 		case 'N': std::cout << "You did not buy this property."; break;
 		//default:
