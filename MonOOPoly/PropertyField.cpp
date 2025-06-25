@@ -22,7 +22,7 @@ PropertyField::PropertyField(MyString& name, unsigned priceToBuy, PropertyColour
 	this->ownerName = "";
 }
 
-void PropertyField::setOwner(MyString& ownerName)
+void PropertyField::setOwner(const MyString& ownerName)
 {
 	this->ownerName = ownerName;
 }
@@ -175,8 +175,16 @@ void PropertyField::increaseCottageCount()
 
 void PropertyField::increaseCastleCount()
 {
-	castleCount++;
-	rent += rent / 2;
+	if(cottageCount == 4)
+	{
+		castleCount++;
+		rent += rent / 2;
+		cottageCount = 0;
+		std::cout << "You bought castle.";
+	}
+	else {
+		std::cout << "Need to have four cottages.";
+	}
 }
 
 const MyString& PropertyField::getOwnerName() const

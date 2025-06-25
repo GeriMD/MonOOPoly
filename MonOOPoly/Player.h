@@ -19,6 +19,7 @@ private:
 	bool skipTurn = false;
 	bool isInJail = false;
 	bool isBancrupted = false;
+	bool isNotActive = false;
 
 	//TODO: Add properties
 
@@ -61,5 +62,9 @@ public:
 	void checkIsJail();
 	bool hasProperty(int index);
 	bool hasAllProperties(PropertyColour colour);
+
+	bool getIsNotActive() const;
+
+	void surrender();
 };
 

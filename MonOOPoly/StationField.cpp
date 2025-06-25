@@ -10,7 +10,7 @@ StationField::StationField(const MyString& name, int index, const MyString& desc
     this->name = name;
 }
 
-void StationField::setOwner(MyString& ownerName)
+void StationField::setOwner(const MyString& ownerName)
 {
     this->ownerName = ownerName;
   
@@ -69,4 +69,7 @@ void StationField::applyEffect(Player& player)
         player.setPlayerMoney(player.getPlayersMoney() - owner->getStationCount() * 50);
         owner->setPlayerMoney(owner->getPlayersMoney() + owner->getStationCount() * 50);
     }
+}
+const MyString& StationField::getOwnerName() const {
+    return ownerName;
 }

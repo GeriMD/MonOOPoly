@@ -2,6 +2,8 @@
 #include "Dice.h"
 #include "Board.h"
 #include "PropertyField.h"
+#include "StationField.h"
+#include "ServiceField.h"
 Player::Player()
 {
 }
@@ -134,6 +136,8 @@ void Player::checkIfHasMoneyToPay(int amount)
     if (getPlayersMoney() < amount)
     {
         setIsBancrupted(true);
+        surrender();
+        std::cout << "You do not have enough money left so you lost." << std::endl;
         //std::cout << "1";
     }
 }
@@ -261,6 +265,36 @@ bool Player::hasAllProperties(PropertyColour colour)
     }
    
     return false;
+}
+bool Player::getIsNotActive() const
+{
+    return isNotActive;
+}
+void Player::surrender()
+{
+    isNotActive = true;
+    Board& board = Board::getInstance();
+    for (int i = 0; i < 40; i++)
+    {
+        StationField* station = dynamic_cast<StationField*>(&board.getField(i));
+        if (station && station->getOwnerName() == getName())
+        {
+            station->setOwner("");
+        }
+        ServiceField* service = dynamic_cast<ServiceField*>(&board.getField(i));
+        if (service && service->getOwnerName() == getName())
+        {
+            service->setOwner("");
+        }
+        
+        PropertyField* property = dynamic_cast<PropertyField*>(&board.getField(i));
+        if (property && property->getOwnerName() == getName())
+        {
+            property->setOwner("");
+        }
+        
+    }
+
 }
 Player* Player::clone() const {
     return new Player(*this);  

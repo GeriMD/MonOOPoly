@@ -1,6 +1,7 @@
 #include "Monopoly.h"
 #include <windows.h>
 #include "CardDeck.h"
+#include "PropertyField.h"
 
 Dice& dice = Dice::getInstance();
 Board& board = Board::getInstance();
@@ -49,6 +50,10 @@ void Monopoly::playTurn(int index)
 		Player& player = getPlayer(index);
 		//Board& board = Board::getInstance();
 	do {
+		if (player.getIsNotActive())
+			break;
+
+
 		std::cout << "Player " << index + 1 << std::endl;
 		player.checkIsJail();
 
@@ -145,7 +150,11 @@ void Monopoly::test()
 	players.addObject(pl);
 player->movePlayerTo(37);
 board.getField(37).applyEffect(*player);
-player->buyCottage(37);
-player->printPlayerInfo();
+PropertyField* property = dynamic_cast<PropertyField*>(&board.getField(37));
+std::cout << property->getOwnerName() << std::endl;
+player->surrender();
+std::cout << property->getOwnerName() << std::endl;
+//player->buyCottage(37);
+//player->printPlayerInfo();
 
 }

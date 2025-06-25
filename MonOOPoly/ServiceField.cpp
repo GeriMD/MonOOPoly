@@ -57,7 +57,7 @@ void ServiceField::printFieldInformation() const
 		std::cout << "NO TYPE!!!" << std::endl;
 	}
 }
-void ServiceField::setOwner(MyString& ownerName)
+void ServiceField::setOwner(const MyString& ownerName)
 {
 	this->ownerName = ownerName;
 }
@@ -96,4 +96,7 @@ void ServiceField::applyEffect(Player& player)
 	
 		//owner->setPlayerMoney(owner->getPlayersMoney() + diceSum * 5);
 	}
+}
+const MyString& ServiceField::getOwnerName() const{
+	return ownerName;
 }

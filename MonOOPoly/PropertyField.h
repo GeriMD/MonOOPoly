@@ -21,7 +21,7 @@ public:
 	PropertyField();
 	PropertyField(MyString& name, unsigned priceToBuy, PropertyColour& colour, unsigned rent, unsigned cottagePrice, unsigned castlePrice, int index, MyString& description);
 
-	void setOwner(MyString& ownerName);
+	void setOwner(const MyString& ownerName);
 	virtual Field* clone() const override;
 	virtual void readFromFile(std::ifstream& is) override;
 	virtual void printFieldInformation() const override;
