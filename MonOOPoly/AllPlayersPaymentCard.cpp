@@ -50,25 +50,41 @@ bool AllPlayersPaymentCard::isGetOutOfJail()
 
 void AllPlayersPaymentCard::applyCard(Player& player)
 {
+	//std::cout << "In\n";
 	Monopoly& monopoly = Monopoly::getInstance();
 	printDescription();
-	for (int i = 0; i < monopoly.getPlayersCount(); i++)
-	{
-		if (player.getPlayersIndex() != monopoly.getPlayer(i)->getPlayersIndex())
-		{
-			if (amount < 0)
-			{
-				if (player.getPlayersMoney() < amount * (-1))
-				{
-					//TODO:
-				}
-				player.setPlayerMoney(player.getPlayersMoney() - amount * (-1));
-				monopoly.getPlayer(i)->setPlayerMoney(monopoly.getPlayer(i)->getPlayersMoney() + amount * (-1));
-			}
-			else {
-				player.setPlayerMoney(player.getPlayersMoney() + amount);
-				monopoly.getPlayer(i)->setPlayerMoney(monopoly.getPlayer(i)->getPlayersMoney() + amount);
-			}
+	//for (int i = 0; i < monopoly.getPlayersCount(); i++)
+	//{
+	
+		// + => vzema pari
+		// - => dava pari
+			//std::cout << "in if" << i;
+		//if (player.getName() != monopoly.getPlayer(i)->getName()) {
+			//player.setPlayerMoney(player.)
+		//}/
+			 
+		//if (amount < 0)
+		//{
+		//	player.checkIfHasMoneyToPay(monopoly.getPlayersCount() * amount * (-1));
+		//	player.setPlayerMoney(player.getPlayersMoney() - amount * (-1));
+		//	monopoly.getPlayer(i)->setPlayerMoney(monopoly.getPlayer(i)->getPlayersMoney() + amount * (-1));
+		//}
+		//else {
+		//	player.setPlayerMoney(player.getPlayersMoney() + amount);
+		//	monopoly.getPlayer(i)->checkIfHasMoneyToPay(amount);
+		//	monopoly.getPlayer(i)->setPlayerMoney(monopoly.getPlayer(i)->getPlayersMoney() + amount);
+		//
+		//}
+//	}
+	
+	//monopoly.getPlayer(0).setPlayerMoney(100);
+	for (int i = 0; i < monopoly.getPlayersCount(); i++) {
+		if (monopoly.getPlayer(i).getName() != player.getName()) {
+
+			player.setPlayerMoney(monopoly.getPlayer(i).getPlayersMoney() + amount *
+				(monopoly.getPlayersCount() - 1));
+			monopoly.getPlayer(i).setPlayerMoney(monopoly.getPlayer(i).getPlayersMoney() - amount);
 		}
 	}
+	
 }

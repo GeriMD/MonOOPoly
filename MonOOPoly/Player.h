@@ -10,12 +10,13 @@ private:
 
 	int playerIndex = 0;
 	int currentPlayerPositionIndex = 0;
-	int playersMoney = 0;
+	int playersMoney = 1500;
 	bool hasGetOutOfJailCard = false;
 	int stationOwnedCount = 0;
 	bool skipTurn = false;
 	bool isInJail = false;
-	bool rolledPair = false;
+	bool isBancrupted = false;
+
 	//TODO: Add properties
 
 public:
@@ -31,7 +32,7 @@ public:
 	const MyString& getName() const;
 	virtual Player* clone() const;
 	bool getIsInJail() const;
-	bool getRolledPair() const;
+	
 	void setCurrentPosition(int index);
 	void sendToJail();
 	void getOutOfJail();
@@ -40,11 +41,15 @@ public:
 	void addStation();
 	void printPlayerInfo() const;
 	void setHasGetOOJCard();
-	void setRolledPair(bool rolledPair);
+	
 	bool shouldSkipTurn();
 	void movePlayerWith(int positions);
 	void movePlayerTo(int position);
 	void setSkipTurn(bool skip);
+	bool getIsBancrupted() const;
+
+	void setIsBancrupted(bool isBancrupted);
+	void checkIfHasMoneyToPay(int amount);
 	//TODO: add more functions
 
 };

@@ -140,6 +140,7 @@ void PropertyField::applyEffect(Player& player)
 	
 	if (owner == nullptr)
 	{
+		again:
 		std::cout << "This property does not have an owner. Do you want to buy it? Yes/No [y/n]" << std::endl;
 		std::cout << "Answer: ";
 char answer;
@@ -151,8 +152,11 @@ char answer;
 			break; }
 		case 'n':
 		case 'N': std::cout << "You did not buy this property."; break;
-		//default:
+		default:
 			//throws exception
+			std::cout << "Invalid answer. Try again.";
+			system("pause");
+			goto again;
 		}
 	}
 	else {

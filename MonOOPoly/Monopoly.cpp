@@ -1,5 +1,7 @@
 #include "Monopoly.h"
 #include <windows.h>
+#include "CardDeck.h"
+
 Dice& dice = Dice::getInstance();
 Board& board = Board::getInstance();
 
@@ -9,9 +11,9 @@ Monopoly& Monopoly::getInstance()
 	return instance;
 }
 
-Player* Monopoly::getPlayer(int index)
+Player& Monopoly::getPlayer(int index)
 {
-	return players[index];
+	return *players[index];
 }
 
 Player* Monopoly::getPlayerByName(const MyString& name)
@@ -44,7 +46,7 @@ void Monopoly::playTurn(int index)
 {
 //Dice& dice = Dice::getInstance();
 		
-		Player* player = getPlayer(index);
+		Player& player = getPlayer(index);
 		//Board& board = Board::getInstance();
 	do {
 		
@@ -54,14 +56,15 @@ void Monopoly::playTurn(int index)
 		dice.rollDice();
 		int positionsToMove = dice.getSumOfTheDice();
 
-		player->movePlayerWith(positionsToMove);
-		board.getField(player->getCurrentPosition())->printDescription();
-		board.getField(player->getCurrentPosition())->applyEffect(*player);
+		player.movePlayerWith(positionsToMove);
+		board.getField(player.getCurrentPosition())->printDescription();
+		board.getField(player.getCurrentPosition())->applyEffect(player);
 		Sleep(2000);
-		player->printPlayerInfo();
+		player.printPlayerInfo();
 		Sleep(1000);
 	} while (dice.getIsPair());
-
+	system("pause");
+	system("cls");
 }
 
 void Monopoly::startGame()
@@ -128,4 +131,30 @@ void Monopoly::printRules()
 bool Monopoly::getGameOver()
 {
 	return gameOver;
+}
+
+void Monopoly::test()
+{
+	CardDeck& deck = CardDeck::getInstance();
+	for (int i = 0; i < 2; i++) {
+		deck.drawCard();
+}
+	Player* player1 = new Player("Pl1",0,1500);
+	Player* player2 = new Player("Pl2",0,1500);
+	Player* player3 = new Player("Pl3",0,1500);
+	Player* player4 = new Player("Pl4",0,1500);
+	//Player* player2("Pl2",0,100);
+	//Player* player3("Pl3",0,100);
+	//Player* player4("Pl4",0,100);
+	players.addObject(player1);
+	players.addObject(player2);
+	players.addObject(player3);
+	players.addObject(player4);
+	deck.drawCard().get()->applyCard(*player3);
+
+	//std::cout << player1.getName();
+	std::cout << (*player3).getPlayersMoney()<<"\n";
+	std::cout << (*player1).getPlayersMoney()<<"\n";
+	std::cout << (*player2).getPlayersMoney()<<"\n";
+	std::cout << (*player4).getPlayersMoney()<<"\n";
 }

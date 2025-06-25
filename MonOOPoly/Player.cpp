@@ -87,10 +87,7 @@ void Player::setHasGetOOJCard()
 {
     hasGetOutOfJailCard = true;
 }
-void Player::setRolledPair(bool rolledPair)
-{
-   this->rolledPair = rolledPair;
-}
+
 bool Player::shouldSkipTurn()
 {
     return skipTurn;
@@ -120,6 +117,22 @@ void Player::setSkipTurn(bool skip)
 {
     this->skipTurn = skip;
 }
+bool Player::getIsBancrupted() const
+{
+    return isBancrupted;
+}
+void Player::setIsBancrupted(bool isBancrupted)
+{
+    this->isBancrupted = isBancrupted;
+}
+void Player::checkIfHasMoneyToPay(int amount)
+{
+    if (getPlayersMoney() < amount)
+    {
+        setIsBancrupted(true);
+        std::cout << "hjvfghgh";
+    }
+}
 Player* Player::clone() const {
     return new Player(*this);  
 }
@@ -129,7 +142,3 @@ bool Player::getIsInJail() const
     return isInJail;
 }
 
-bool Player::getRolledPair() const
-{
-    return rolledPair;
-}

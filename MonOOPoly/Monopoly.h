@@ -20,7 +20,7 @@ public:
 	Monopoly& operator=(const Monopoly& other) = delete;
 	
 	static Monopoly& getInstance();
-	Player* getPlayer(int index);
+	Player& getPlayer(int index);
 	Player* getPlayerByName(const MyString& name);
 	int getPlayersCount() const;
 	int getCurrentPlayerIndex() const;
@@ -30,5 +30,7 @@ public:
 	void printWelcomeText();
 	void printRules();
 	bool getGameOver();
+
+	void test();
 };
 
