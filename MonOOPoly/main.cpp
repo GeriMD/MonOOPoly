@@ -52,9 +52,9 @@ int main(){
 
 
 	Monopoly& monopoly = Monopoly::getInstance();
-	//monopoly.startGame();
+	monopoly.startGame();
 
-	monopoly.test();
+	//monopoly.test();
 	
 	return 0;
 

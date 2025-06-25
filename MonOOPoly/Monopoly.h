@@ -31,5 +31,6 @@ public:
 	bool getGameOver();
 
 	void test();
+	int getPlayersActiveCount() const;
 };
 

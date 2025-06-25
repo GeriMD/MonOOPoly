@@ -70,6 +70,7 @@ void ServiceField::applyEffect(Player& player)
 	
 	if (owner == nullptr)
 	{
+		again:
 		std::cout << "This service does not have an owner. Do you want to buy it? Yes/No [y/n]" << std::endl;
 		std::cout << "Answer: ";
 		char answer;
@@ -79,22 +80,17 @@ void ServiceField::applyEffect(Player& player)
 		case 'y':
 		case 'Y': ownerName = player.getName(); break;
 		case 'n':
-		case 'N': std::cout << "You did not buy this service."; break;
-		//default:
-			//throws exception
+		case 'N': std::cout << "You did not buy this service." << std::endl; break;
+		default:
+			system("cls");
+			goto again;
 		}
 	}
 	else {
-		std::cout << "This service has an owner. You must roll the dice again. Please enter roll." << std::endl;
-		MyString answer;
-		std::cin >> answer;
-		//TODO:
-		//factory.readCommand(answer)->executeCommand();
-		
-		//int diceSum; // TODO: GET FROM THE COMMAND
-		//player.setPlayerMoney(player.getPlayersMoney() - diceSum * 5);
-	
-		//owner->setPlayerMoney(owner->getPlayersMoney() + diceSum * 5);
+		std::cout << "This service has an owner. You must pay 100 BGN." << std::endl;
+		player.checkIfHasMoneyToPay(100);
+		player.setPlayerMoney(player.getPlayersMoney() - 100);
+		owner->setPlayerMoney(owner->getPlayersMoney() + 100);
 	}
 }
 const MyString& ServiceField::getOwnerName() const{

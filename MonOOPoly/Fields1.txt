@@ -11,11 +11,11 @@ Oops! You broke the law! You need to go to the jail!
 You are in jail!
 10
 6
-You are on first service field. If it is not owned you can buy it for 150 BGN. If it is owned you should roll the dice again and pay the owner 5 times the amount you roll.
+You are on first service field. If it is not owned you can buy it for 150 BGN. If it is owned you should pay him 100 BGN.
 12
 2
 6
-You are on second service field. If it is not owned you can buy it for 150 BGN. If it is owned you should roll the dice again and pay the owner 5 times the amount you roll.
+You are on second service field. If it is not owned you can buy it for 150 BGN. If it is owned you should pay him 100 BGN.
 28
 1
 7

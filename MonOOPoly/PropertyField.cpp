@@ -150,11 +150,11 @@ char answer;
 		case 'Y': { ownerName = player.getName(); player.setPlayerMoney(player.getPlayersMoney() - priceToBuy);
 			break; }
 		case 'n':
-		case 'N': std::cout << "You did not buy this property."; break;
+		case 'N': std::cout << "You did not buy this property." << std::endl; break;
 		default:
 			//throws exception
 			std::cout << "Invalid answer. Try again.";
-			system("pause");
+			system("cls");
 			goto again;
 		}
 	}

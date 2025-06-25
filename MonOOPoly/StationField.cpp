@@ -49,6 +49,7 @@ void StationField::applyEffect(Player& player)
     Player* owner = monopoly.getPlayerByName(ownerName);
     if (owner == nullptr)
     {
+        again:
         std::cout << "This station does not have an owner. Do you want to buy it? Yes/No [y/n]" << std::endl;
         std::cout << "Answer: ";
         char answer;
@@ -58,9 +59,10 @@ void StationField::applyEffect(Player& player)
         case 'y':
         case 'Y': { ownerName = player.getName(); player.addStation(); break; }
         case 'n':
-        case 'N': std::cout << "You did not buy this property."; break;
-       // default:
-            //throws exception
+        case 'N': std::cout << "You did not buy this station." <<std::endl;  break;
+        default:
+            system("cls");
+            goto again;
         }
     }
     else {

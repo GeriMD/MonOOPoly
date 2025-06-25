@@ -49,16 +49,18 @@ void Monopoly::playTurn(int index)
 		
 		Player& player = getPlayer(index);
 		//Board& board = Board::getInstance();
-	do {
-		if (player.getIsNotActive())
-			break;
+	
+		if (player.getIsNotActive()) {
+			return;
+		}
+			
 
 
 		std::cout << "Player " << index + 1 << std::endl;
 		player.checkIsJail();
 
 		if (player.getIsInJail()) {
-			break;
+			return;
 		}
 		std::cout << "It is your turn. Roll the dice!" << std::endl;
 		Sleep(1000);
@@ -71,7 +73,7 @@ void Monopoly::playTurn(int index)
 		Sleep(2000);
 		player.printPlayerInfo();
 		Sleep(1000);
-	} while (dice.getIsPair());
+	
 	system("pause");
 	system("cls");
 }
@@ -104,14 +106,14 @@ void Monopoly::startGame()
 		players[i]->printPlayerInfo();
 		std::cout << std::endl;
 	}
-	while (!getGameOver() || players.getSize() == 1)
+	while (!getGameOver() || getPlayersActiveCount() == 1)
 	{
 		for (int i = 0; i < players.getSize(); i++)
 		{
 			playTurn(i);
 		}
 	}
-//playTurn(0);
+
 }
 
 
@@ -157,4 +159,18 @@ std::cout << property->getOwnerName() << std::endl;
 //player->buyCottage(37);
 //player->printPlayerInfo();
 
+}
+
+int Monopoly::getPlayersActiveCount() const
+{
+	int playersActive = 0;
+
+	for (int i = 0; i < players.getSize(); i++)
+	{
+		if (!players[i]->getIsNotActive())
+		{
+			playersActive++;
+		}
+	}
+	return playersActive;
 }
