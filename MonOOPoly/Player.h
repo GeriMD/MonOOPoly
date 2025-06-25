@@ -1,6 +1,8 @@
 #pragma once
 #include "MyString.h"
 #include "PlayerColour.h"
+#include "PropertyColour.h"
+
 
 #pragma warning(disable:4996)
 
@@ -58,5 +60,6 @@ public:
 
 	void checkIsJail();
 	bool hasProperty(int index);
+	bool hasAllProperties(PropertyColour colour);
 };
 

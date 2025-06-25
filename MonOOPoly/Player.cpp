@@ -141,22 +141,31 @@ void Player::buyCottage(int index)
 {
     Board& board = Board::getInstance();
     PropertyField* property = dynamic_cast<PropertyField*>(&board.getField(index));
-    if (!property)
+    if (property && hasAllProperties(property->getColour())) {
+
+
+        if (!property)
+        {
+            std::cout << "Invalid index! Field on this index is not a property!" << std::endl;
+            system("pause");
+            return;
+        }
+        if (!hasProperty(index))
+        {
+            std::cout << "Player " << name << " does not own this property!" << std::endl;
+            system("pause");
+            return;
+        }
+        property->increaseCottageCount();
+        setPlayerMoney(getPlayersMoney() - property->getCottagePrice());
+       // std::cout << property->getCottagePrice();
+        std::cout << "Bought cottage." << std::endl;
+    } else 
     {
-        std::cout << "Invalid index! Field on this index is not a property!" << std::endl;
-        system("pause");
-        return;
-   }
-    if (!hasProperty(index))
-    {
-        std::cout << "Player " << name << " does not own this property!" << std::endl;
+        std::cout << "Player does not have all properties with this colour!" << std::endl;
         system("pause");
         return;
     }
-    property->increaseCottageCount();
-    setPlayerMoney(getPlayersMoney() - property->getCottagePrice());
-    std::cout << property->getCottagePrice();
-    std::cout << "bought cottage";
 }
 void Player::buyCastle(int index)
 {
@@ -223,6 +232,34 @@ bool Player::hasProperty(int index)
     {
         return true;
     }
+    return false;
+}
+bool Player::hasAllProperties(PropertyColour colour)
+{
+    Board& board = Board::getInstance();
+
+    int propertyWithColourCount = 0;
+    int playerOwnedFieldsCount = 0;
+
+    for (int i = 0; i < 40; i++)
+    {
+        Field* current = &board.getField(i);
+        PropertyField* property = dynamic_cast<PropertyField*>(current);
+        if (property && property->getColour() == colour)
+        {
+            propertyWithColourCount++;
+            if (property->getOwnerName() == getName())
+            {
+                playerOwnedFieldsCount++;
+            }
+        }
+    }
+    //std::cout << propertyWithColourCount << " " << playerOwnedFieldsCount;
+    if (propertyWithColourCount == playerOwnedFieldsCount)
+    {
+        return true;
+    }
+   
     return false;
 }
 Player* Player::clone() const {

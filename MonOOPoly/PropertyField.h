@@ -31,5 +31,6 @@ public:
 	const MyString& getOwnerName() const;
 	int getCottagePrice() const;
 	int getCastlePrice() const;
+	PropertyColour getColour() const;
 };
 

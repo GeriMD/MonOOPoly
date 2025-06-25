@@ -194,4 +194,9 @@ int PropertyField::getCastlePrice() const
 	return castlePrice;
 }
 
+PropertyColour PropertyField::getColour() const
+{
+	return colour;
+}
+
 
